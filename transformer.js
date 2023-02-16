@@ -25,6 +25,7 @@ class DictionaryCoder {
             console.log("El mensaje sera decodificado");
             usedDictionary = this.swapDictionary(this.dictionary);
         }
+        console.log(usedDictionary)
         for (let c of message) {
             if(c in usedDictionary) {
                 transformedMessage = transformedMessage + usedDictionary[c];
@@ -65,24 +66,28 @@ const generalDictionary = {
 let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar mensajes!";
 alert(bienvenida);
 
-let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
-let message = prompt(`Introduce el texto que quieras ${operation}...`);
-let method = prompt("¿Que método de codificacion quieres usar, de vocales o general?");
-let coder;
-let newMessage;
-switch(method) {
-    case "vocales":
-        coder = new DictionaryCoder(vocalDictionary);
-        newMessage = coder.transform(message, operation);
-        alert(`Este es tu mensaje: ${newMessage}`);
-        break;
-    case "general":
-        coder = new DictionaryCoder(generalDictionary);
-        newMessage = coder.transform(message, operation);
-        alert(`Este es tu mensaje: ${newMessage}`);
-        break;
-    default: 
-        newMessage = reverseMessage(message);
-        alert(`Este es tu mensaje: ${newMessage}`);
-        break;
+let active = "si";
+while(active == "si") {
+    let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
+    let message = prompt(`Introduce el texto que quieras ${operation}...`);
+    let method = prompt("¿Que método de codificacion quieres usar, de vocales o general?");
+    let coder;
+    let newMessage;
+    switch(method) {
+        case "vocales":
+            coder = new DictionaryCoder(vocalDictionary);
+            newMessage = coder.transform(message, operation);
+            alert(`Este es tu mensaje: ${newMessage}`);
+            break;
+        case "general":
+            coder = new DictionaryCoder(generalDictionary);
+            newMessage = coder.transform(message, operation);
+            alert(`Este es tu mensaje: ${newMessage}`);
+            break;
+        default: 
+            newMessage = reverseMessage(message);
+            alert(`Este es tu mensaje: ${newMessage}`);
+            break;
+    }
+    active = prompt("¿Desea realizar otra codificacion?");
 }
