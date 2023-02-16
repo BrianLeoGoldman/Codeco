@@ -1,0 +1,11 @@
+.index-main {
+    background-color: nth($colors, 1);
+    .main-panel {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .main-buttons {
+            align-items: center;
+        }
+    }
+}

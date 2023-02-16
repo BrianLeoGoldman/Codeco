@@ -1,0 +1,12 @@
+$colors:
+whitesmoke,
+black,
+gold,
+green;
+
+@mixin flex ($display, $direction, $justify, $align) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
