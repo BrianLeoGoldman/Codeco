@@ -23,11 +23,10 @@ function transform(message, operation, dictionary) {
         console.log("El mensaje sera codificado");
         usedDictionary = dictionary;
     }
-    else {
+    if(operation === "decodificar") {
         console.log("El mensaje sera decodificado");
         usedDictionary = swapDictionary(dictionary);
     }
-    console.log(usedDictionary)
     for (let c of message) {
         if(c in usedDictionary) {
             transformedMessage = transformedMessage + usedDictionary[c];
@@ -61,21 +60,29 @@ let active = "si";
 while(active == "si") {
     let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
     let message = prompt(`Introduce el texto que quieras ${operation}...`);
-    let method = prompt("¿Que método de codificacion quieres usar, de vocales o general?");
+    let method = prompt("¿Que método de codificacion quieres usar: de vocales, general o reversion?");
     let newMessage;
-    switch(method) {
-        case "vocales":
-            newMessage = transform(message, operation, vocalDictionary);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
-        case "general":
-            newMessage = transform(message, operation, generalDictionary);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
-        default: 
-            newMessage = reverseMessage(message);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
+    if(operation === "codificar" || operation === "decodificar") {
+        switch(method) {
+            case "vocales":
+                newMessage = transform(message, operation, vocalDictionary);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            case "general":
+                newMessage = transform(message, operation, generalDictionary);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            case "reversion":
+                newMessage = reverseMessage(message);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            default: 
+                alert(`No se ha podido ${operation} el mensaje`);
+                break;
+        }
+    } 
+    else {
+        alert(`La operacion ${operation} no es valida`);
     }
     active = prompt("¿Desea realizar otra codificacion?");
 }
