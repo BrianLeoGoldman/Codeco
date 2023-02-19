@@ -1,44 +1,12 @@
-/* DICTIONARY CODER-DECODER */
+/* FUNCTIONS */
 
-class DictionaryCoder {
-
-    constructor(dictionary) {
-        this.dictionary = dictionary;
+function swapDictionary(dictionary){
+    let swapped = {};
+    for(let key in dictionary){
+        swapped[dictionary[key]] = key;
     }
-
-    swapDictionary(){
-        let swapped = {};
-        for(let key in this.dictionary){
-            swapped[this.dictionary[key]] = key;
-        }
-        return swapped;
-    }
-
-    transform(message, operation) {
-        let transformedMessage = "";
-        let usedDictionary;
-        if(operation === "codificar") {
-            console.log("El mensaje sera codificado");
-            usedDictionary = this.dictionary;
-        }
-        else {
-            console.log("El mensaje sera decodificado");
-            usedDictionary = this.swapDictionary(this.dictionary);
-        }
-        console.log(usedDictionary)
-        for (let c of message) {
-            if(c in usedDictionary) {
-                transformedMessage = transformedMessage + usedDictionary[c];
-            }
-            else {
-                transformedMessage = transformedMessage + c;
-            }
-        }
-        return transformedMessage;
-    } 
+    return swapped;
 }
-
-/* REVERSE FUNCTION */
 
 function reverseMessage(message) {
     console.log("El mensaje sera invertido");
@@ -47,6 +15,28 @@ function reverseMessage(message) {
     let reversedMessage = reverseArray.join("");
     return reversedMessage;
 }
+
+function transform(message, operation, dictionary) {
+    let transformedMessage = "";
+    let usedDictionary;
+    if(operation === "codificar") {
+        console.log("El mensaje sera codificado");
+        usedDictionary = dictionary;
+    }
+    if(operation === "decodificar") {
+        console.log("El mensaje sera decodificado");
+        usedDictionary = swapDictionary(dictionary);
+    }
+    for (let c of message) {
+        if(c in usedDictionary) {
+            transformedMessage = transformedMessage + usedDictionary[c];
+        }
+        else {
+            transformedMessage = transformedMessage + c;
+        }
+    }
+    return transformedMessage;
+} 
 
 
 /* DICTIONARIES */
@@ -70,24 +60,29 @@ let active = "si";
 while(active == "si") {
     let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
     let message = prompt(`Introduce el texto que quieras ${operation}...`);
-    let method = prompt("¿Que método de codificacion quieres usar, de vocales o general?");
-    let coder;
+    let method = prompt("¿Que método de codificacion quieres usar: de vocales, general o reversion?");
     let newMessage;
-    switch(method) {
-        case "vocales":
-            coder = new DictionaryCoder(vocalDictionary);
-            newMessage = coder.transform(message, operation);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
-        case "general":
-            coder = new DictionaryCoder(generalDictionary);
-            newMessage = coder.transform(message, operation);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
-        default: 
-            newMessage = reverseMessage(message);
-            alert(`Este es tu mensaje: ${newMessage}`);
-            break;
+    if(operation === "codificar" || operation === "decodificar") {
+        switch(method) {
+            case "vocales":
+                newMessage = transform(message, operation, vocalDictionary);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            case "general":
+                newMessage = transform(message, operation, generalDictionary);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            case "reversion":
+                newMessage = reverseMessage(message);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            default: 
+                alert(`No se ha podido ${operation} el mensaje`);
+                break;
+        }
+    } 
+    else {
+        alert(`La operacion ${operation} no es valida`);
     }
     active = prompt("¿Desea realizar otra codificacion?");
 }
