@@ -1,3 +1,32 @@
+/* CLASS */
+
+class CustomCoder {
+    constructor(list) {
+        this.encodeDictionary = list;
+        this.decodeDictionary = swapDictionary(list);
+    }
+
+    encode(message, operation) {
+        let usedDictionary;
+        let newMessage = "";
+        if(operation === "codificar"){
+            usedDictionary = this.encodeDictionary;
+        }
+        else {
+            usedDictionary = this.decodeDictionary;
+        }
+        for (let c of message) {
+            if(c in usedDictionary) {
+                newMessage = newMessage + usedDictionary[c];
+            }
+            else {
+                newMessage = newMessage + c;
+            }
+        }
+        return newMessage
+    }
+}
+
 /* FUNCTIONS */
 
 function swapDictionary(dictionary){
@@ -38,6 +67,32 @@ function transform(message, operation, dictionary) {
     return transformedMessage;
 } 
 
+function createCustomCoder() {
+    let creating = true;
+    let list = {};
+    while(creating) {
+        let key = prompt("Introduzca el caracter a cambiar:");
+        let value = prompt("Introduzca el caracter por el que sera reemplazado:");
+        list[key] = value;
+        let continuar = prompt("¿Desea cambiar otro caracter?");
+        if(continuar !== "si") {
+            creating = false;
+        }
+    }
+    return new CustomCoder(list);
+}
+
+/*
+nombres.push("alejandra"); // agrega al final
+console.log(nombres);
+nombres.unshift("mariana"); // agrega al inicio
+console.log(nombres);
+nombres.pop(); // quita el ultimo elemento
+console.log(nombres);
+nombres.shift(); // quita el primer elemento
+console.log(nombres);
+*/
+
 
 /* DICTIONARIES */
 
@@ -60,7 +115,7 @@ let active = "si";
 while(active == "si") {
     let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
     let message = prompt(`Introduce el texto que quieras ${operation}...`);
-    let method = prompt("¿Que método de codificacion quieres usar: de vocales, general o reversion?");
+    let method = prompt("¿Que método de codificacion quieres usar: vocales, general, reversion o personalizado?");
     let newMessage;
     if(operation === "codificar" || operation === "decodificar") {
         switch(method) {
@@ -74,6 +129,11 @@ while(active == "si") {
                 break;
             case "reversion":
                 newMessage = reverseMessage(message);
+                alert(`Este es tu mensaje: ${newMessage}`);
+                break;
+            case "personalizado":
+                let customCoder = createCustomCoder();
+                newMessage = customCoder.encode(message, operation);
                 alert(`Este es tu mensaje: ${newMessage}`);
                 break;
             default: 
