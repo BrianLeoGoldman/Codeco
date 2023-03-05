@@ -1,3 +1,23 @@
+/* DICTIONARIES */
+
+const vocalDictionary = {
+    "a": "z", "e": "y", "i": "x", "o": "w", "u": "v"
+}
+
+const generalDictionary = {
+    "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7, "h": 8, "i": 9, "j": 0, "k": "a", "l": "b", "m": "c",
+    "n": "d", "o": "e", "p": "f", "q": "g", "r": "h", "s": "i", "t": "j", "u": "k", "v": "l", "w": "m", "x": "n",
+    "y": "o", "z": "p", " ": "$"
+}
+
+/* ARRAYS */
+
+const sequence = [
+    {id: 1, operation: "codificar", method: "general", messages: ["La reunion es en la plaza"]},
+    {id: 2, operation: "decodificar", method: "vocales", messages: ["La reunion es en la plaza"]},
+    {id: 3, operation: "codificar", method: "reversion", messages: ["El blanco esta desaparecido", "No hay tiempo"]},
+]
+
 /* CLASS */
 
 class CustomCoder {
@@ -23,6 +43,7 @@ class CustomCoder {
                 newMessage = newMessage + c;
             }
         }
+        cosnole.log(newMessage);
         return newMessage
     }
 }
@@ -64,6 +85,7 @@ function transform(message, operation, dictionary) {
             transformedMessage = transformedMessage + c;
         }
     }
+    console.log(transformedMessage);
     return transformedMessage;
 } 
 
@@ -82,67 +104,96 @@ function createCustomCoder() {
     return new CustomCoder(list);
 }
 
-/*
-nombres.push("alejandra"); // agrega al final
-console.log(nombres);
-nombres.unshift("mariana"); // agrega al inicio
-console.log(nombres);
-nombres.pop(); // quita el ultimo elemento
-console.log(nombres);
-nombres.shift(); // quita el primer elemento
-console.log(nombres);
-*/
-
-
-/* DICTIONARIES */
-
-const vocalDictionary = {
-    "a": "z", "e": "y", "i": "x", "o": "w", "u": "v"
+function createMessageList() {
+    let list = [];
+    let active = "si";
+    while(active === "si") {
+        message = prompt("Ingrese el mensaje a procesar...");
+        list.push(message);
+        active = prompt("¿Desea ingresar otro mensaje?");
+    }
+    console.log(list);
+    return list;
 }
 
-const generalDictionary = {
-    "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7, "h": 8, "i": 9, "j": 0, "k": "a", "l": "b", "m": "c",
-    "n": "d", "o": "e", "p": "f", "q": "g", "r": "h", "s": "i", "t": "j", "u": "k", "v": "l", "w": "m", "x": "n",
-    "y": "o", "z": "p", " ": "$"
+function createOperation(index) {  
+    let operation = prompt("Ingrese si la operacion sera codificar o decodificar");
+    let method = prompt("Ingrese el método de codificacion: vocales, general o reversion");
+    let messages = createMessageList();
+    let element = {
+        id: index,
+        operation: operation,
+        method: method,
+        messages: messages
+    };
+    console.log(element);
+    return element;
 }
 
-/* MESSAGE PROCESSING */
+function createSequence() {
+    let sequence = [];
+    let active = "si";
+    while(active === "si") {
+        alert("Ingrese los datos de la operacion a realizar");
+        sequence.push(createOperation(sequence.length + 1));
+        active = prompt("¿Desea continuar?");
+    }
+    console.log(sequence);
+    return sequence
+}
 
-let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar mensajes!";
-alert(bienvenida);
-
-let active = "si";
-while(active == "si") {
-    let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
-    let message = prompt(`Introduce el texto que quieras ${operation}...`);
-    let method = prompt("¿Que método de codificacion quieres usar: vocales, general, reversion o personalizado?");
+function process(operation, method, messageList) {
     let newMessage;
     if(operation === "codificar" || operation === "decodificar") {
-        switch(method) {
-            case "vocales":
-                newMessage = transform(message, operation, vocalDictionary);
-                alert(`Este es tu mensaje: ${newMessage}`);
-                break;
-            case "general":
-                newMessage = transform(message, operation, generalDictionary);
-                alert(`Este es tu mensaje: ${newMessage}`);
-                break;
-            case "reversion":
-                newMessage = reverseMessage(message);
-                alert(`Este es tu mensaje: ${newMessage}`);
-                break;
-            case "personalizado":
-                let customCoder = createCustomCoder();
-                newMessage = customCoder.encode(message, operation);
-                alert(`Este es tu mensaje: ${newMessage}`);
-                break;
-            default: 
-                alert(`No se ha podido ${operation} el mensaje`);
-                break;
+        while(messageList.length > 0) {
+            switch(method) {
+                case "vocales":
+                    newMessage = transform(messageList.shift(), operation, vocalDictionary);
+                    alert(`Este es tu mensaje: ${newMessage}`);
+                    break;
+                case "general":
+                    newMessage = transform(messageList.shift(), operation, generalDictionary);
+                    alert(`Este es tu mensaje: ${newMessage}`);
+                    break;
+                case "reversion":
+                    newMessage = reverseMessage(messageList.shift());
+                    alert(`Este es tu mensaje: ${newMessage}`);
+                    break;
+                case "personalizado":
+                    let customCoder = createCustomCoder();
+                    newMessage = customCoder.encode(messageList.shift(), operation);
+                    alert(`Este es tu mensaje: ${newMessage}`);
+                    break;
+                default: 
+                    alert(`No se ha podido ${operation} el mensaje`);
+                    break;
+            }
         }
     } 
     else {
         alert(`La operacion ${operation} no es valida`);
     }
-    active = prompt("¿Desea realizar otra codificacion?");
 }
+
+/* MESSAGE PROCESSING */
+
+let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!";
+alert(bienvenida);
+let active = "si";
+while(active == "si") {
+    let choice = prompt("¿Desea realizar una o varias operaciones?");
+    if (choice === 'una') {
+        let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
+        let method = prompt("¿Que método de codificacion quieres usar: vocales, general, reversion o personalizado?");
+        let messageList = createMessageList()
+        process(operation, method, messageList);
+    }
+    else {
+        let sequence = createSequence();
+        sequence.forEach(element => {
+            process(element.operation, element.method, element.messages);
+        });
+    }
+    active = prompt("¿Desea realizar otra operacion?");
+}
+
