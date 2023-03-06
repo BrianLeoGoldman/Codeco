@@ -1,11 +1,11 @@
 /* DICTIONARIES */
 
 const vocalDictionary = {
-    "a": "z", "e": "y", "i": "x", "o": "w", "u": "v"
+    "a": 1, "e": 2, "i": 3, "o": 4, "u": 5
 }
 
-const generalDictionary = {
-    "a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7, "h": 8, "i": 9, "j": 0, "k": "a", "l": "b", "m": "c",
+const positionShiftDictionary = {
+    "a": "q", "b": "r", "c": "s", "d": "t", "e": "u", "f": "v", "g": "w", "h": "x", "i": "y", "j": "z", "k": "a", "l": "b", "m": "c",
     "n": "d", "o": "e", "p": "f", "q": "g", "r": "h", "s": "i", "t": "j", "u": "k", "v": "l", "w": "m", "x": "n",
     "y": "o", "z": "p", " ": "$"
 }
@@ -90,16 +90,14 @@ function transform(message, operation, dictionary) {
 } 
 
 function createCustomCoder() {
-    let creating = true;
+    let active = "si";
     let list = {};
-    while(creating) {
-        let key = prompt("Introduzca el caracter a cambiar:");
-        let value = prompt("Introduzca el caracter por el que sera reemplazado:");
+    while(active) {
+        let key = prompt("Introduzca el caracter a cambiar en el texto original:");
+        let value = prompt("Introduzca el caracter por el que sera reemplazado en el texto codificado:");
         list[key] = value;
-        let continuar = prompt("¿Desea cambiar otro caracter?");
-        if(continuar !== "si") {
-            creating = false;
-        }
+        active = prompt("¿Desea cambiar otro caracter?");
+        active = active.toLowerCase();
     }
     return new CustomCoder(list);
 }
@@ -111,14 +109,15 @@ function createMessageList() {
         message = prompt("Ingrese el mensaje a procesar...");
         list.push(message);
         active = prompt("¿Desea ingresar otro mensaje?");
+        active = active.toLowerCase();
     }
-    console.log(list);
+    console.log(`createMessageList: ${list}`);
     return list;
 }
 
 function createOperation(index) {  
     let operation = prompt("Ingrese si la operacion sera codificar o decodificar");
-    let method = prompt("Ingrese el método de codificacion: vocales, general o reversion");
+    let method = prompt("Ingrese el método de codificacion: vocales, posicion o reversion");
     let messages = createMessageList();
     let element = {
         id: index,
@@ -126,7 +125,7 @@ function createOperation(index) {
         method: method,
         messages: messages
     };
-    console.log(element);
+    console.log(`createOperation: \nId: ${element.id} \nOperacion: ${element.operation} \nMétodo: ${element.method} \nMensajes: ${element.messages}`);
     return element;
 }
 
@@ -136,9 +135,21 @@ function createSequence() {
     while(active === "si") {
         alert("Ingrese los datos de la operacion a realizar");
         sequence.push(createOperation(sequence.length + 1));
-        active = prompt("¿Desea continuar?");
+        view = prompt("¿Desea ver la sequencia hasta el momento?");
+        if(view === "si") {
+            sequence.map(x => alert(`Id: ${x.id} \nOperacion: ${x.operation} \nMétodo: ${x.method} \nMensajes: ${x.messages}`));
+        }
+        active = prompt("¿Desea agregar otra operacion a la secuencia?");
+        active = active.toLowerCase();
     }
-    console.log(sequence);
+    let remove = prompt("¿Desea eliminar alguna operacion de la secuencia?");
+    if(remove === "si") {
+        let toBeRemoved = parseInt(prompt("Ingrese el id de la operacion a ser eliminada"));
+        const found = sequence.find(element => element.id == toBeRemoved);
+        const index = sequence.indexOf(found);
+        sequence.splice(index, 1);
+    }
+    console.log(`createSequence: ${sequence.flatMap(x => `\nId: ${x.id} \nOperacion: ${x.operation} \nMétodo: ${x.method} \nMensajes: ${x.messages}`)}`);
     return sequence
 }
 
@@ -151,8 +162,8 @@ function process(operation, method, messageList) {
                     newMessage = transform(messageList.shift(), operation, vocalDictionary);
                     alert(`Este es tu mensaje: ${newMessage}`);
                     break;
-                case "general":
-                    newMessage = transform(messageList.shift(), operation, generalDictionary);
+                case "posicion":
+                    newMessage = transform(messageList.shift(), operation, positionShiftDictionary);
                     alert(`Este es tu mensaje: ${newMessage}`);
                     break;
                 case "reversion":
@@ -175,25 +186,43 @@ function process(operation, method, messageList) {
     }
 }
 
+function createMethodsList() {
+    let methods = ["Método de reversion: invierte las posiciones de los caracteres que forman el mensaje",
+                   "Método de vocales: reemplaza las vocales del texto por números",
+                   "Método de posicion: desplaza las letras por otras letras cambiando la posicion en el alfabeto",
+                   "Método personalizado: permite al usuario crear su propio diccionario de caracteres para reemplazar"];
+    return methods
+}
+
 /* MESSAGE PROCESSING */
 
 let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!";
 alert(bienvenida);
 let active = "si";
 while(active === "si") {
-    let choice = prompt("¿Desea realizar una o varias operaciones?");
-    if (choice === 'una') {
-        let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
-        let method = prompt("¿Que método de codificacion quieres usar: vocales, general, reversion o personalizado?");
-        let messageList = createMessageList()
-        process(operation, method, messageList);
-    }
-    else {
-        let sequence = createSequence();
-        sequence.forEach(element => {
-            process(element.operation, element.method, element.messages);
-        });
+    let choice = parseInt(prompt("¿Que desea hacer? \n1) Codificar o decodificar un mensaje \n2) Programar una sequencia de codificaciones \n3) Conocer más sobre los métodos de codificación"));
+    switch(choice) {
+        case 1:
+            let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
+            let method = prompt("¿Que método de codificacion quieres usar: vocales, general, reversion o personalizado?");
+            let messageList = createMessageList()
+            process(operation, method, messageList);
+            break;
+        case 2:
+            let sequence = createSequence();
+            sequence.forEach(element => {
+                process(element.operation, element.method, element.messages);
+            });
+            break;
+        case 3:
+            let methodList = createMethodsList();
+            methodList.map(x => alert(x));
+            break;
+        default: 
+            alert(`La opcion ${choice} no es valida`);
+            break;
     }
     active = prompt("¿Desea realizar otra operacion?");
+    active = active.toLowerCase();
 }
 
