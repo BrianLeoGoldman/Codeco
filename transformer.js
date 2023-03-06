@@ -12,7 +12,7 @@ const generalDictionary = {
 
 /* ARRAYS */
 
-const sequence = [
+const initialSequence = [
     {id: 1, operation: "codificar", method: "general", messages: ["La reunion es en la plaza"]},
     {id: 2, operation: "decodificar", method: "vocales", messages: ["La reunion es en la plaza"]},
     {id: 3, operation: "codificar", method: "reversion", messages: ["El blanco esta desaparecido", "No hay tiempo"]},
@@ -180,7 +180,7 @@ function process(operation, method, messageList) {
 let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!";
 alert(bienvenida);
 let active = "si";
-while(active == "si") {
+while(active === "si") {
     let choice = prompt("¿Desea realizar una o varias operaciones?");
     if (choice === 'una') {
         let operation = prompt("¿Quieres codificar o decodificar un mensaje?");
