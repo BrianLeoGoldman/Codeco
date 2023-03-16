@@ -15,12 +15,12 @@ header {
   header h1 {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 80px;
+    font-size: 70px;
     color: whitesmoke; }
   header nav .nav .nav-item .nav-link {
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 25px;
+    font-size: 20px;
     color: whitesmoke; }
     header nav .nav .nav-item .nav-link:hover {
       color: gold;
@@ -35,5 +35,41 @@ header {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px; }
-    .index-main .main-panel .main-buttons {
+    .index-main .main-panel .welcome-text {
+      margin: 20px;
+      align-items: center;
+      align-content: center; }
+    .index-main .main-panel .user-info {
+      width: 400px;
+      margin: 20px; }
+    .index-main .main-panel .register {
+      margin: 20px; }
+
+.encode-main {
+  background-color: whitesmoke; }
+  .encode-main .encode-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .encode-main .encode-panel .encode-text {
+      margin: 20px;
       align-items: center; }
+    .encode-main .encode-panel .dropdown {
+      padding: 30px; }
+      .encode-main .encode-panel .dropdown .method-label {
+        margin-right: 10px; }
+      .encode-main .encode-panel .dropdown .method-select {
+        border-radius: 3px; }
+    .encode-main .encode-panel .input-group {
+      margin-left: 40px;
+      margin-right: 40px; }
+      .encode-main .encode-panel .input-group .input-group-prepend {
+        margin-left: 50px;
+        width: 100px; }
+      .encode-main .encode-panel .input-group .form-control {
+        margin-right: 50px; }
+    .encode-main .encode-panel .code-button {
+      margin: 20px; }

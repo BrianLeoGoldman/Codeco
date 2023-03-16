@@ -197,8 +197,11 @@ function createMethodsList() {
 /* MESSAGE PROCESSING */
 
 let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!";
-alert(bienvenida);
-let active = "si";
+let div = document.getElementById("welcome-text");
+div.innerHTML = "<h2>¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!</h2>";
+
+/* alert(bienvenida); */
+let active = "no";
 while(active === "si") {
     let choice = parseInt(prompt("¿Que desea hacer? \n1) Codificar o decodificar un mensaje \n2) Programar una sequencia de codificaciones \n3) Conocer más sobre los métodos de codificación"));
     switch(choice) {
@@ -226,3 +229,12 @@ while(active === "si") {
     active = active.toLowerCase();
 }
 
+
+let register = document.getElementById("register");
+
+register.addEventListener("click", () => {
+    let firstname = document.getElementById("firstname");
+    let lastname = document.getElementById("lastname");
+    console.log(firstname.value);
+    console.log(lastname.value);
+});
