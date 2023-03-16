@@ -1,21 +1,21 @@
 import { process } from './functions.js';
 
-let encode = document.getElementById("encode");
+let decode = document.getElementById("decode");
 
-encode.addEventListener("click", () => {
+decode.addEventListener("click", () => {
     let method = document.getElementById("method").value;
     console.log(method);
     let message = document.getElementById("message").value;
     console.log(message);
-    let encodedMessage = process("codificar", method, [message]);
-    console.log(encodedMessage);
+    let decodedMessage = process("decodificar", method, [message]);
+    console.log(decodedMessage);
 
     let result = document.getElementById("result");
-    if(encodedMessage === undefined) {
+    if(decodedMessage === undefined) {
         result.innerHTML = ``;
     }
     else {
-        result.innerHTML = `${encodedMessage}`;
+        result.innerHTML = `${decodedMessage}`;
     }
     
 });

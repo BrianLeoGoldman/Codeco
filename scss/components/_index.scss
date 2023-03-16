@@ -8,13 +8,29 @@
             margin: 20px;
             align-items: center;
             align-content: center;
+            .text1 {
+                text-align: center;
+            }
+            .text2 {
+                text-align: center;
+                margin-top: 30px;
+            }
         }
         .user-info {
             width: 400px;
-            margin: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
         }
         .register {
             margin: 20px;
+        }
+        .register-success {
+            align-items: center;
+            align-content: center;
+            h4 {
+                text-align: center;
+            }
         }
     }
 }

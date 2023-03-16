@@ -22,7 +22,10 @@
             margin-right: 40px;
             .input-group-prepend {
                 margin-left: 50px;
-                width: 100px;
+                width: 120px;
+                .input-group-text {
+                    width: 120px;
+                }
             }
             .form-control {
                 margin-right: 50px;

@@ -39,11 +39,23 @@ header {
       margin: 20px;
       align-items: center;
       align-content: center; }
+      .index-main .main-panel .welcome-text .text1 {
+        text-align: center; }
+      .index-main .main-panel .welcome-text .text2 {
+        text-align: center;
+        margin-top: 30px; }
     .index-main .main-panel .user-info {
       width: 400px;
-      margin: 20px; }
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px; }
     .index-main .main-panel .register {
       margin: 20px; }
+    .index-main .main-panel .register-success {
+      align-items: center;
+      align-content: center; }
+      .index-main .main-panel .register-success h4 {
+        text-align: center; }
 
 .encode-main {
   background-color: whitesmoke; }
@@ -68,7 +80,9 @@ header {
       margin-right: 40px; }
       .encode-main .encode-panel .input-group .input-group-prepend {
         margin-left: 50px;
-        width: 100px; }
+        width: 120px; }
+        .encode-main .encode-panel .input-group .input-group-prepend .input-group-text {
+          width: 120px; }
       .encode-main .encode-panel .input-group .form-control {
         margin-right: 50px; }
     .encode-main .encode-panel .code-button {

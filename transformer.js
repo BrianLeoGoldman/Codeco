@@ -230,11 +230,3 @@ while(active === "si") {
 }
 
 
-let register = document.getElementById("register");
-
-register.addEventListener("click", () => {
-    let firstname = document.getElementById("firstname");
-    let lastname = document.getElementById("lastname");
-    console.log(firstname.value);
-    console.log(lastname.value);
-});
