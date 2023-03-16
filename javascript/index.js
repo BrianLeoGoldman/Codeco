@@ -1,3 +1,5 @@
+import { save, get } from './storage.js';
+
 function createUser(firstname, lastname) {
     let user = {
         firstname: firstname,
@@ -9,14 +11,6 @@ function createUser(firstname, lastname) {
     return user
 }
 
-function save(key, value) {
-    localStorage.setItem(key, value);
-}
-
-function get(key) {
-    return localStorage.getItem(key);
-}
-
 let register = document.getElementById("register");
 
 register.addEventListener("click", () => {
@@ -25,10 +19,12 @@ register.addEventListener("click", () => {
 
     if(get(firstname.value + lastname.value)) {
         alert(`Lo lamentamos ${firstname.value}, pero ya te has registrado`);
+        save("user", firstname.value + lastname.value);
     }
     else {
         let newUser = createUser(firstname.value, lastname.value);
-        save(firstname.value + lastname.value, JSON.stringify(newUser));
+        save(firstname.value + lastname.value, newUser);
+        save("user", firstname.value + lastname.value);
     
         let success = document.getElementById("register-success");
         let message = document.createElement("div");
@@ -40,40 +36,3 @@ register.addEventListener("click", () => {
         success.append(message);
     }
 });
-
-
-
-/*
-
-
-
-productos.forEach(item => {
-    guardar(item.id, JSON.stringify(item));
-})
-
-localStorage.setItem("carrito", JSON.stringify(productos));
-
-let usuario;
-let usuarioStorage = sessionStorage.getItem("usuario");
-
-if (usuarioStorage) {
-    usuario = usuarioStorage;
-    alert(`Bienvenido nuevamente ${usuario}!`);
-} else {
-    usuario = prompt("Ingrese el usuario");
-    alert(`Hola ${usuario}! Es tu primera vez`);
-    sessionStorage.setItem("usuario", usuario);
-}
-
-let carrito = [];
-let carritoStorage = localStorage.getItem("carrito");
-
-if (carritoStorage) {
-    carrito = JSON.parse(carritoStorage);
-} else {
-    let div = document.createElement("div");
-    div.innerHTML = "El carrito esta vacio";
-    document.body.append(div);
-}
-
-*/

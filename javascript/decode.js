@@ -1,4 +1,5 @@
 import { process } from './functions.js';
+import { addUserData } from './storage.js';
 
 let decode = document.getElementById("decode");
 
@@ -16,6 +17,7 @@ decode.addEventListener("click", () => {
     }
     else {
         result.innerHTML = `${decodedMessage}`;
+        addUserData("decode", message, decodedMessage)
     }
     
 });
