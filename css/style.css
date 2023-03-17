@@ -97,9 +97,112 @@ header {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px; }
-    .user-main .user-section .user-text {
+    .user-main .user-section .section-title {
       margin: 20px;
       align-items: center;
       align-content: center; }
-      .user-main .user-section .user-text .text {
-        text-align: center; }
+      .user-main .user-section .section-title .title {
+        text-align: center;
+        font-size: 1.7rem;
+        color: black; }
+    .user-main .user-section .user-panel {
+      align-items: center;
+      align-content: center;
+      align-self: center;
+      border-style: ridge;
+      padding-left: 5px;
+      padding-right: 5px; }
+      .user-main .user-section .user-panel .user-info {
+        margin: 20px;
+        align-items: center;
+        align-content: center; }
+        .user-main .user-section .user-panel .user-info .user-bio {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.7rem;
+          color: black; }
+          .user-main .user-section .user-panel .user-info .user-bio .user-names {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; }
+            .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
+              margin-left: 30px;
+              margin-right: 30px; }
+          .user-main .user-section .user-panel .user-info .user-bio .date {
+            margin-top: 30px; }
+        .user-main .user-section .user-panel .user-info .information {
+          margin: 20px;
+          align-items: center;
+          align-content: center; }
+  .user-main .message-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .user-main .message-section .section-title {
+      margin: 20px;
+      align-items: center;
+      align-content: center; }
+      .user-main .message-section .section-title .title {
+        text-align: center;
+        font-size: 1.7rem;
+        color: black; }
+    .user-main .message-section .message-panel {
+      align-items: center;
+      align-content: center;
+      align-self: center; }
+      .user-main .message-section .message-panel .message-info {
+        margin: 20px;
+        align-items: center;
+        align-content: center; }
+        .user-main .message-section .message-panel .message-info .all-messages {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: start;
+          font-size: 0.7rem;
+          color: black;
+          width: 100%; }
+          .user-main .message-section .message-panel .message-info .all-messages .encoded-messages {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            margin-right: 20px;
+            width: 45vw; }
+            .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
+              align-self: center; }
+            .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .message {
+              width: 100%;
+              border-style: ridge;
+              padding-left: 5px;
+              padding-right: 5px; }
+              .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .message p {
+                width: 100%;
+                overflow-wrap: break-word; }
+          .user-main .message-section .message-panel .message-info .all-messages .decoded-messages {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            margin-left: 20px;
+            width: 45vw; }
+            .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
+              align-self: center; }
+            .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .message {
+              width: 100%;
+              border-style: ridge;
+              padding-left: 5px;
+              padding-right: 5px; }
+              .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .message p {
+                width: 100%;
+                overflow-wrap: break-word; }
+        .user-main .message-section .message-panel .message-info .information {
+          margin: 20px;
+          align-items: center;
+          align-content: center; }

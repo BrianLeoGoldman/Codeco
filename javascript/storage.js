@@ -1,22 +1,26 @@
 export function save(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+    sessionStorage.setItem(key, JSON.stringify(value));
 }
 
 export function get(key) {
-    return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(sessionStorage.getItem(key));
 }
 
 export function addUserData(operation, inputMessage, outputMessage) {
     let currentUser = get("user");
     let userData = get(currentUser);
+    let object = {
+        input: inputMessage, 
+        output: outputMessage, 
+        date: new Date().toDateString()
+    };
     if(operation === "encode") {
-        userData.encodedMessages.push(inputMessage);
-        save(currentUser, userData);
+        userData.encodedMessages.push(object);
     }
     if(operation === "decode") {
-        userData.decodedMessages.push(inputMessage);
-        save(currentUser, userData);
+        userData.decodedMessages.push(object);
     }
+    save(currentUser, userData);
 }
 
 /*

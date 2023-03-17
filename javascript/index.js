@@ -4,7 +4,7 @@ function createUser(firstname, lastname) {
     let user = {
         firstname: firstname,
         lastname: lastname,
-        register: new Date(),
+        register: new Date().toDateString(),
         encodedMessages: [],
         decodedMessages: []
     }
