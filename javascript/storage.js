@@ -31,11 +31,6 @@ function createUser(firstname, lastname) {
     return user
 }
 
-
-productos.forEach(item => {
-    guardar(item.id, JSON.stringify(item));
-})
-
 localStorage.setItem("carrito", JSON.stringify(productos));
 
 let usuario;

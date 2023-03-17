@@ -1,0 +1,19 @@
+.user-main {
+    background-color: nth($colors, 1);
+    .user-section {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .user-text {
+            margin: 20px;
+            align-items: center;
+            align-content: center;
+            .text {
+                text-align: center;
+            }
+        }
+        .user-panel {
+            
+        }
+    }
+}

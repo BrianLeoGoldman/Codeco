@@ -29,8 +29,8 @@ register.addEventListener("click", () => {
         let success = document.getElementById("register-success");
         let message = document.createElement("div");
         message.innerHTML = `
-        <h4>¡Hola ${firstname.value} ${lastname.value}!</h3>
-        <h4>¡Te has registrado exitosamente!</h3>
+        <h4>¡Hola ${firstname.value} ${lastname.value}!</h4>
+        <h4>¡Te has registrado exitosamente!</h4>
         `
         success.innerText = "";
         success.append(message);

@@ -87,3 +87,19 @@ header {
         margin-right: 50px; }
     .encode-main .encode-panel .code-button {
       margin: 20px; }
+
+.user-main {
+  background-color: whitesmoke; }
+  .user-main .user-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .user-main .user-section .user-text {
+      margin: 20px;
+      align-items: center;
+      align-content: center; }
+      .user-main .user-section .user-text .text {
+        text-align: center; }
