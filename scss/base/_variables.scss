@@ -4,9 +4,37 @@ black,
 gold,
 green;
 
+// MIXIN //
+
 @mixin flex ($display, $direction, $justify, $align) {
     display: $display;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
+}
+
+// EXTEND //
+
+%title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: nth($colors, 2);
+}
+
+%border {
+    border-style: ridge;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+%centered {
+    align-items: center;
+    align-content: center;
+}
+
+%hover {
+    &:hover {
+        color: nth($colors, 3);
+        transition: all .3s;
+    }
 }

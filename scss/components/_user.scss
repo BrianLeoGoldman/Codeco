@@ -6,25 +6,17 @@
         padding-bottom: 20px;
         .section-title {
             margin: 20px;
-            align-items: center;
-            align-content: center;
+            @extend %centered;
             .title {
-                text-align: center;
-                font-size: 1.7rem;
-                color: nth($colors, 2);
+                @extend %title;
             }
         }
         .user-panel {
-            align-items: center;
-            align-content: center;
-            align-self: center;
-            border-style: ridge;
-            padding-left: 5px;
-            padding-right: 5px;
+            @extend %centered;
+            @extend %border;
             .user-info {
                 margin: 20px;
-                align-items: center;
-                align-content: center;
+                @extend %centered;
                 .user-bio {
                     @include flex(flex, column, center, center);
                     font-size: 0.7rem;
@@ -43,8 +35,7 @@
                 }
                 .information {
                     margin: 20px;
-                    align-items: center;
-                    align-content: center;
+                    @extend %centered;
                 }
             }
         }
@@ -55,22 +46,16 @@
         padding-bottom: 20px;
         .section-title {
             margin: 20px;
-            align-items: center;
-            align-content: center;
+            @extend %centered;
             .title {
-                text-align: center;
-                font-size: 1.7rem;
-                color: nth($colors, 2);
+                @extend %title;
             }
         }
         .message-panel {
-            align-items: center;
-            align-content: center;
-            align-self: center;
+            @extend %centered;
             .message-info {
                 margin: 20px;
-                align-items: center;
-                align-content: center;
+                @extend %centered;
                 .all-messages {
                     @include flex(flex, row, center, start);
                     font-size: 0.7rem;
@@ -85,9 +70,7 @@
                         }
                         .message {
                             width: 100%;
-                            border-style: ridge;
-                            padding-left: 5px;
-                            padding-right: 5px;
+                            @extend %border;
                             p {
                                 width: 100%;
                                 overflow-wrap: break-word;
@@ -103,9 +86,7 @@
                         }
                         .message {
                             width: 100%;
-                            border-style: ridge;
-                            padding-left: 5px;
-                            padding-right: 5px;
+                            @extend %border;
                             p {
                                 width: 100%;
                                 overflow-wrap: break-word;
@@ -115,8 +96,7 @@
                 }
                 .information {
                     margin: 20px;
-                    align-items: center;
-                    align-content: center;
+                    @extend %centered;
                 }
             }
         }

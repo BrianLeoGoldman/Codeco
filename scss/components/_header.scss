@@ -15,10 +15,7 @@ header {
                     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                     font-size: 20px;
                     color: nth($colors, 1);
-                    &:hover {
-                        color: nth($colors, 3);
-                        transition: all .3s;
-                    }
+                    @extend %hover;
                 }
 
             }

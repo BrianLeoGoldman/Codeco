@@ -6,13 +6,12 @@
         padding-bottom: 20px;
         .welcome-text {
             margin: 20px;
-            align-items: center;
-            align-content: center;
+            @extend %centered;
             .text1 {
-                text-align: center;
+                @extend %title;
             }
             .text2 {
-                text-align: center;
+                @extend %title;
                 margin-top: 30px;
             }
         }
@@ -26,8 +25,7 @@
             margin: 20px;
         }
         .register-success {
-            align-items: center;
-            align-content: center;
+            @extend %centered;
             h4 {
                 text-align: center;
             }
