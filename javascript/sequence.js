@@ -69,7 +69,7 @@ execute.addEventListener("click", () => {
         let processedMessage = "";
         sequence.forEach(step => {
             processedMessage = process(step.operation, step.method, [messageToProcess]);
-            addUserData(step.operation, messageToProcess, processedMessage);
+            addUserData(step.operation, step.method, messageToProcess, processedMessage);
             messageToProcess = processedMessage;
         })
         let response = document.getElementById("sequence-response");

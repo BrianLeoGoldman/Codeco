@@ -5,11 +5,8 @@ let decode = document.getElementById("decode");
 
 decode.addEventListener("click", () => {
     let method = document.getElementById("method").value;
-    console.log(method);
     let message = document.getElementById("message").value;
-    console.log(message);
     let decodedMessage = process("decode", method, [message]);
-    console.log(decodedMessage);
 
     let result = document.getElementById("result");
     if(decodedMessage === undefined) {
@@ -17,7 +14,7 @@ decode.addEventListener("click", () => {
     }
     else {
         result.innerHTML = `${decodedMessage}`;
-        addUserData("decode", message, decodedMessage)
+        addUserData("decode", method, message, decodedMessage)
     }
     
 });
