@@ -1,0 +1,36 @@
+.sequence-main {
+    .sequence-panel {
+        @include flex(flex, column, center, center);
+        @extend %centered;
+        .sequence-text {
+            @extend %title;
+            @extend %centered;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .cards {
+            .card {
+                width: 120vh;
+                padding: 10px;
+                margin-top: 10px;
+                padding: 10px;
+                @extend %centered;
+                .input-group {
+                    padding: 10px;
+                }
+                .dropdowns {
+                    @include flex(flex, row, center, center);
+                    .dropdown {
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+        .buttons {
+            @include flex(flex, row, center, center);
+            .sequence-button {
+                margin: 15px;
+            }
+        }
+    }
+}

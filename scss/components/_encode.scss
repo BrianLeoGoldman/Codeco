@@ -1,0 +1,37 @@
+.encode-main {
+    background-color: nth($colors, 1);
+    .encode-panel {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .encode-text {
+            @extend %title;
+        }
+        .dropdown {
+            padding: 30px;
+            .method-label {
+                margin-right: 10px;
+            }
+            .method-select {
+                border-radius: 3px;
+            }
+        }
+        .input-group {
+            margin-left: 40px;
+            margin-right: 40px;
+            .input-group-prepend {
+                margin-left: 50px;
+                width: 120px;
+                .input-group-text {
+                    width: 120px;
+                }
+            }
+            .form-control {
+                margin-right: 50px;
+            }
+        }
+        .code-button {
+            margin: 20px;
+        }
+    }
+}

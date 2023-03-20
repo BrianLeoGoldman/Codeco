@@ -1,106 +1,5 @@
-/* DICTIONARIES */
-
-const vocalDictionary = {
-    "a": 1, "e": 2, "i": 3, "o": 4, "u": 5
-}
-
-const positionShiftDictionary = {
-    "a": "q", "b": "r", "c": "s", "d": "t", "e": "u", "f": "v", "g": "w", "h": "x", "i": "y", "j": "z", "k": "a", "l": "b", "m": "c",
-    "n": "d", "o": "e", "p": "f", "q": "g", "r": "h", "s": "i", "t": "j", "u": "k", "v": "l", "w": "m", "x": "n",
-    "y": "o", "z": "p", " ": "$"
-}
-
-/* ARRAYS */
-
-const initialSequence = [
-    {id: 1, operation: "codificar", method: "general", messages: ["La reunion es en la plaza"]},
-    {id: 2, operation: "decodificar", method: "vocales", messages: ["La reunion es en la plaza"]},
-    {id: 3, operation: "codificar", method: "reversion", messages: ["El blanco esta desaparecido", "No hay tiempo"]},
-]
-
-/* CLASS */
-
-class CustomCoder {
-    constructor(list) {
-        this.encodeDictionary = list;
-        this.decodeDictionary = swapDictionary(list);
-    }
-
-    encode(message, operation) {
-        let usedDictionary;
-        let newMessage = "";
-        if(operation === "codificar"){
-            usedDictionary = this.encodeDictionary;
-        }
-        else {
-            usedDictionary = this.decodeDictionary;
-        }
-        for (let c of message) {
-            if(c in usedDictionary) {
-                newMessage = newMessage + usedDictionary[c];
-            }
-            else {
-                newMessage = newMessage + c;
-            }
-        }
-        cosnole.log(newMessage);
-        return newMessage
-    }
-}
 
 /* FUNCTIONS */
-
-function swapDictionary(dictionary){
-    let swapped = {};
-    for(let key in dictionary){
-        swapped[dictionary[key]] = key;
-    }
-    return swapped;
-}
-
-function reverseMessage(message) {
-    console.log("El mensaje sera invertido");
-    let splitMessage = message.split("");
-    let reverseArray = splitMessage.reverse();
-    let reversedMessage = reverseArray.join("");
-    return reversedMessage;
-}
-
-function transform(message, operation, dictionary) {
-    let transformedMessage = "";
-    let usedDictionary;
-    if(operation === "codificar") {
-        console.log("El mensaje sera codificado");
-        usedDictionary = dictionary;
-    }
-    if(operation === "decodificar") {
-        console.log("El mensaje sera decodificado");
-        usedDictionary = swapDictionary(dictionary);
-    }
-    for (let c of message) {
-        if(c in usedDictionary) {
-            transformedMessage = transformedMessage + usedDictionary[c];
-        }
-        else {
-            transformedMessage = transformedMessage + c;
-        }
-    }
-    console.log(transformedMessage);
-    return transformedMessage;
-} 
-
-function createCustomCoder() {
-    let active = "si";
-    let list = {};
-    while(active) {
-        let key = prompt("Introduzca el caracter a cambiar en el texto original:");
-        let value = prompt("Introduzca el caracter por el que sera reemplazado en el texto codificado:");
-        list[key] = value;
-        active = prompt("¿Desea cambiar otro caracter?");
-        active = active.toLowerCase();
-    }
-    return new CustomCoder(list);
-}
 
 function createMessageList() {
     let list = [];
@@ -153,38 +52,6 @@ function createSequence() {
     return sequence
 }
 
-function process(operation, method, messageList) {
-    let newMessage;
-    if(operation === "codificar" || operation === "decodificar") {
-        while(messageList.length > 0) {
-            switch(method) {
-                case "vocales":
-                    newMessage = transform(messageList.shift(), operation, vocalDictionary);
-                    alert(`Este es tu mensaje: ${newMessage}`);
-                    break;
-                case "posicion":
-                    newMessage = transform(messageList.shift(), operation, positionShiftDictionary);
-                    alert(`Este es tu mensaje: ${newMessage}`);
-                    break;
-                case "reversion":
-                    newMessage = reverseMessage(messageList.shift());
-                    alert(`Este es tu mensaje: ${newMessage}`);
-                    break;
-                case "personalizado":
-                    let customCoder = createCustomCoder();
-                    newMessage = customCoder.encode(messageList.shift(), operation);
-                    alert(`Este es tu mensaje: ${newMessage}`);
-                    break;
-                default: 
-                    alert(`No se ha podido ${operation} el mensaje`);
-                    break;
-            }
-        }
-    } 
-    else {
-        alert(`La operacion ${operation} no es valida`);
-    }
-}
 
 function createMethodsList() {
     let methods = ["Método de reversion: invierte las posiciones de los caracteres que forman el mensaje",
@@ -196,9 +63,7 @@ function createMethodsList() {
 
 /* MESSAGE PROCESSING */
 
-let bienvenida = "¡Bienvenido a CoDeCo, un sitio para codificar y decodificar textos!";
-alert(bienvenida);
-let active = "si";
+let active = "no";
 while(active === "si") {
     let choice = parseInt(prompt("¿Que desea hacer? \n1) Codificar o decodificar un mensaje \n2) Programar una sequencia de codificaciones \n3) Conocer más sobre los métodos de codificación"));
     switch(choice) {
@@ -225,4 +90,5 @@ while(active === "si") {
     active = prompt("¿Desea realizar otra operacion?");
     active = active.toLowerCase();
 }
+
 

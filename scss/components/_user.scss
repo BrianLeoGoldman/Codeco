@@ -1,0 +1,113 @@
+.user-main {
+    background-color: nth($colors, 1);
+    .user-section {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .section-title {
+            margin: 20px;
+            @extend %centered;
+            .title {
+                @extend %title;
+            }
+        }
+        .user-panel {
+            @extend %centered;
+            @extend %border;
+            /* box-shadow: 0px 10px 15px black; */
+            .user-info {
+                margin: 20px;
+                @extend %centered;
+                .user-bio {
+                    @include flex(flex, column, center, center);
+                    font-size: 0.7rem;
+                    color: nth($colors, 2);
+                    .user-names {
+                        @include flex(flex, row, center, center);
+                        h4 {
+                            margin-left: 30px;
+                            margin-right: 30px;
+                            font-family: monospace;
+                            font-weight: 500;
+                        }
+                    
+                    }
+                    .date {
+                        margin-top: 30px;
+                    }
+                }
+                .information {
+                    margin: 20px;
+                    @extend %centered;
+                }
+            }
+        }
+    }
+    .message-section {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .section-title {
+            margin: 20px;
+            @extend %centered;
+            .title {
+                @extend %title;
+            }
+        }
+        .message-panel {
+            @extend %centered;
+            .message-info {
+                margin: 20px;
+                @extend %centered;
+                .all-messages {
+                    @include flex(flex, row, center, start);
+                    font-size: 0.7rem;
+                    color: nth($colors, 2);
+                    width: 100%;
+                    .encoded-messages {
+                        @include flex(flex, column, center, start);
+                        margin-right: 20px;
+                        width: 45vw;
+                        h4 {
+                            align-self: center;
+                        }
+                        .card {
+                            width: 100%;
+                            margin-bottom: 5px;
+                            .card-body {
+                                p {
+                                    width: 100%;
+                                    overflow-wrap: break-word;
+                                }
+                            }
+                            
+                        }
+                    }
+                    .decoded-messages {
+                        @include flex(flex, column, center, start);
+                        margin-left: 20px;
+                        width: 45vw;
+                        h4 {
+                            align-self: center;
+                        }
+                        .card {
+                            width: 100%;
+                            margin-bottom: 5px;
+                            .card-body {
+                                p {
+                                    width: 100%;
+                                    overflow-wrap: break-word;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                .information {
+                    margin: 20px;
+                    @extend %centered;
+                }
+            }
+        }
+    }
+}

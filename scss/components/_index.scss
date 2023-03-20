@@ -1,0 +1,35 @@
+.index-main {
+    background-color: nth($colors, 1);
+    .main-panel {
+        @include flex(flex, column, center, center);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        .welcome-text {
+            margin: 20px;
+            @extend %centered;
+            .text1 {
+                @extend %title;
+            }
+            .text2 {
+                @extend %title;
+                margin-top: 30px;
+            }
+        }
+        .user-info {
+            width: 400px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .register {
+            margin: 20px;
+        }
+        .register-success {
+            @extend %centered;
+            h4 {
+                text-align: center;
+            }
+        }
+    }
+}
+
