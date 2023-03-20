@@ -8,7 +8,7 @@ decode.addEventListener("click", () => {
     console.log(method);
     let message = document.getElementById("message").value;
     console.log(message);
-    let decodedMessage = process("decodificar", method, [message]);
+    let decodedMessage = process("decode", method, [message]);
     console.log(decodedMessage);
 
     let result = document.getElementById("result");

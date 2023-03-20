@@ -18,7 +18,7 @@ register.addEventListener("click", () => {
     let lastname = document.getElementById("lastname");
 
     if(get(firstname.value + lastname.value)) {
-        alert(`Lo lamentamos ${firstname.value}, pero ya te has registrado`);
+        alert(`Sorry ${firstname.value}, you are registered already`);
         save("user", firstname.value + lastname.value);
     }
     else {
@@ -29,8 +29,8 @@ register.addEventListener("click", () => {
         let success = document.getElementById("register-success");
         let message = document.createElement("div");
         message.innerHTML = `
-        <h4>¡Hola ${firstname.value} ${lastname.value}!</h4>
-        <h4>¡Te has registrado exitosamente!</h4>
+        <h4>¡Hello ${firstname.value} ${lastname.value}!</h4>
+        <h4>¡You have been successfully registered!</h4>
         `
         success.innerText = "";
         success.append(message);

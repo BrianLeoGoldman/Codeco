@@ -15,19 +15,19 @@
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">INICIO</a>
+                    <a class="nav-link" href="../index.html">REGISTER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/encode.html">CODIFICAR</a>
+                    <a class="nav-link" href="../pages/encode.html">ENCODE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/decode.html">DECODIFICAR</a>
+                    <a class="nav-link" href="../pages/decode.html">DECODE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/sequence.html">SECUENCIA</a>
+                    <a class="nav-link" href="../pages/sequence.html">SEQUENCE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/user.html">USUARIO</a>
+                    <a class="nav-link" href="../pages/user.html">USER</a>
                 </li>
             </ul>
         </nav>  
@@ -35,30 +35,30 @@
     <main class="encode-main">
         <section class="encode-panel">
             <div id="encode-text" class="encode-text">
-                Para codificar un mensaje, seleccione un método de codificacion, luego ingrese el mensaje y presione "Codificar"
+                To encode a message, please choose an encoding method, then enter the message and press "Encode"
             </div>
             <div class="dropdown">
-                <label class="method-label" for="method">Método:</label>
+                <label class="method-label" for="method">Method:</label>
                 <select id="method" class="method-select">
-                    <option value="none">Ninguno</option>
-                    <option value="vocales">Vocales</option>
-                    <option value="posicion">Posicion</option>
+                    <option value="none">None</option>
+                    <option value="vocals">Vocals</option>
+                    <option value="position">Position</option>
                     <option value="reversion">Reversion</option>
                 </select>
             </div>
 
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Mensaje <br>a codificar</span>
+                    <span class="input-group-text">Message <br>to encode</span>
                 </div>
                 <textarea class="form-control" aria-label="With textarea" id="message"></textarea>
             </div>
 
-            <button type="button" class="btn btn-primary code-button" id="encode">Codificar</button>
+            <button type="button" class="btn btn-primary code-button" id="encode">Encode</button>
 
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Mensaje <br>codificado</span>
+                    <span class="input-group-text">Message <br>encoded</span>
                 </div>
                 <textarea disabled class="form-control" aria-label="With textarea" id="result"></textarea>
             </div>

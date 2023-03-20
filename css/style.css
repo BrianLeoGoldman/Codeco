@@ -103,27 +103,31 @@ header {
     padding-bottom: 20px; }
     .user-main .user-section .section-title {
       margin: 20px; }
-    .user-main .user-section .user-panel .user-info {
-      margin: 20px; }
-      .user-main .user-section .user-panel .user-info .user-bio {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.7rem;
-        color: black; }
-        .user-main .user-section .user-panel .user-info .user-bio .user-names {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center; }
-          .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
-            margin-left: 30px;
-            margin-right: 30px; }
-        .user-main .user-section .user-panel .user-info .user-bio .date {
-          margin-top: 30px; }
-      .user-main .user-section .user-panel .user-info .information {
+    .user-main .user-section .user-panel {
+      box-shadow: 0px 10px 15px black; }
+      .user-main .user-section .user-panel .user-info {
         margin: 20px; }
+        .user-main .user-section .user-panel .user-info .user-bio {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.7rem;
+          color: black; }
+          .user-main .user-section .user-panel .user-info .user-bio .user-names {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; }
+            .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
+              margin-left: 30px;
+              margin-right: 30px;
+              font-family: monospace;
+              font-weight: 500; }
+          .user-main .user-section .user-panel .user-info .user-bio .date {
+            margin-top: 30px; }
+        .user-main .user-section .user-panel .user-info .information {
+          margin: 20px; }
   .user-main .message-section {
     display: flex;
     flex-direction: column;

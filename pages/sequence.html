@@ -15,19 +15,19 @@
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="../index.html">INICIO</a>
+                    <a class="nav-link" href="../index.html">REGISTER</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/encode.html">CODIFICAR</a>
+                    <a class="nav-link" href="../pages/encode.html">ENCODE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/decode.html">DECODIFICAR</a>
+                    <a class="nav-link" href="../pages/decode.html">DECODE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/sequence.html">SECUENCIA</a>
+                    <a class="nav-link" href="../pages/sequence.html">SEQUENCE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../pages/user.html">USUARIO</a>
+                    <a class="nav-link" href="../pages/user.html">USER</a>
                 </li>
             </ul>
         </nav>  
@@ -35,7 +35,7 @@
     <main class="sequence-main">
         <section class="sequence-panel">
             <div id="sequence-text" class="sequence-text">
-                Introduzca el mensaje a procesar y agregue tantas operaciones como desee
+                Please enter a message and add as many operations as you wish
             </div>
 
             <div id="cards" class="cards">
@@ -43,27 +43,27 @@
                 
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text">Mensaje</span>
+                            <span class="input-group-text">Message</span>
                         </div>
                         <textarea class="form-control" aria-label="With textarea" id="message"></textarea>
                     </div>
     
                     <div class="dropdowns">
                         <div class="dropdown">
-                            <label class="operation-label" for="operation">Operación:</label>
+                            <label class="operation-label" for="operation">Operation:</label>
                             <select id="operation" class="operation-select">
-                                <option value="none">Ninguna</option>
-                                <option value="codificar">Codificar</option>
-                                <option value="decodificar">Decodificar</option>
+                                <option value="none">None</option>
+                                <option value="encode">Encode</option>
+                                <option value="decode">Decode</option>
                             </select>
                         </div>
         
                         <div class="dropdown">
-                            <label class="method-label" for="method">Método:</label>
+                            <label class="method-label" for="method">Method:</label>
                             <select id="method" class="method-select">
-                                <option value="none">Ninguno</option>
-                                <option value="vocales">Vocales</option>
-                                <option value="posicion">Posicion</option>
+                                <option value="none">None</option>
+                                <option value="vocals">Vocals</option>
+                                <option value="position">Position</option>
                                 <option value="reversion">Reversion</option>
                             </select>
                         </div>
@@ -73,9 +73,11 @@
             </div>
 
             <div class="buttons">
-                <button type="button" class="btn btn-secondary sequence-button" id="add">Agregar</button>
-                <button type="button" class="btn btn-primary sequence-button" id="execute">Ejecutar</button>
+                <button type="button" class="btn btn-secondary sequence-button" id="add">Add operation</button>
+                <button type="button" class="btn btn-primary sequence-button" id="execute">Execute</button>
             </div>
+
+            <div id="sequence-response"></div>
 
     </main>
 

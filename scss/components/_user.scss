@@ -14,6 +14,7 @@
         .user-panel {
             @extend %centered;
             @extend %border;
+            box-shadow: 0px 10px 15px black;
             .user-info {
                 margin: 20px;
                 @extend %centered;
@@ -26,6 +27,8 @@
                         h4 {
                             margin-left: 30px;
                             margin-right: 30px;
+                            font-family: monospace;
+                            font-weight: 500;
                         }
                     
                     }

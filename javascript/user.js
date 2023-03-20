@@ -4,10 +4,10 @@ function fillUserPanel(user, userInfo) {
     userInfo.innerHTML = `
     <div class="user-bio">
         <div class="user-names">
-            <h4>Nombre: ${user.firstname}</h4>
-            <h4>Apellido: ${user.lastname}</h4>
+            <h4>Firstname: ${user.firstname}</h4>
+            <h4>Lastname: ${user.lastname}</h4>
         </div>
-        <h4 class="date">Registrado: ${user.register}</h4>
+        <h4 class="date">Registered: ${user.register}</h4>
     </div>
     `
     return userInfo
@@ -18,25 +18,25 @@ function fillMessagePanel(user, messageInfo) {
     htmlString = htmlString + `
     <div class="all-messages">
         <div class="encoded-messages">
-            <h4>Mensajes codificados</h4>
+            <h4>Encoded messages</h4>
     `;
     user.encodedMessages.forEach(item => {
         htmlString = htmlString + `<div class="message">`;
         htmlString = htmlString + `<p><b>Original</b>: ${item.input}</p>`;
-        htmlString = htmlString + `<p><b>Codificado</b>: ${item.output}</p>`;
-        htmlString = htmlString + `<p><b>Fecha</b>: ${item.date}</p>`;
+        htmlString = htmlString + `<p><b>Encoded</b>: ${item.output}</p>`;
+        htmlString = htmlString + `<p><b>Date</b>: ${item.date}</p>`;
         htmlString = htmlString + `</div>`;
     })
     htmlString = htmlString + `
         </div>
         <div class="decoded-messages">
-            <h4>Mensajes decodificados</h4>
+            <h4>Decoded messages</h4>
     `;
     user.decodedMessages.forEach(item => {
         htmlString = htmlString + `<div class="message">`;
-        htmlString = htmlString + `<p><b>Codificado</b>: ${item.input}</p>`;
-        htmlString = htmlString + `<p><b>Decodificado</b>: ${item.output}</p>`;
-        htmlString = htmlString + `<p><b>Fecha</b>: ${item.date}</p>`;
+        htmlString = htmlString + `<p><b>Original</b>: ${item.input}</p>`;
+        htmlString = htmlString + `<p><b>Decoded</b>: ${item.output}</p>`;
+        htmlString = htmlString + `<p><b>Date</b>: ${item.date}</p>`;
         htmlString = htmlString + `</div>`;
     })
     htmlString = htmlString + `
@@ -58,12 +58,12 @@ messageInfo.className = "message-info";
 
 if(currentUser === null) {
     userInfo.innerHTML = `
-    <h4 class="information">No hay ningun usuario registrado</h4>
-    <h4 class="information">Prueba registrarte en la página de Inicio</h4>
+    <h4 class="information">There is no registered user</h4>
+    <h4 class="information">Please go to Register page to register your data</h4>
     `
     userPanel.innerText = "";
     userPanel.append(userInfo);
-    messageInfo.innerHTML = `<h4 class="information">No hay mensajes codificados o decodificados</h4>`
+    messageInfo.innerHTML = `<h4 class="information">There are no encoded or decoded messages</h4>`
     messagePanel.innerText = "";
     messagePanel.append(messageInfo);
 }

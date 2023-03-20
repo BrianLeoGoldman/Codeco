@@ -1,5 +1,5 @@
 import { process } from './functions.js';
-import { addUserData } from './storage.js';
+import { addUserData, save } from './storage.js';
 
 let add = document.getElementById("add");
 
@@ -10,20 +10,20 @@ add.addEventListener("click", () => {
     newCard.innerHTML = `
         <div class="dropdowns">
             <div class="dropdown">
-                <label class="operation-label" for="operation">Operación:</label>
+                <label class="operation-label" for="operation">Operation:</label>
                 <select id="added-operation" class="operation-select">
-                    <option value="none">Ninguna</option>
-                    <option value="codificar">Codificar</option>
-                    <option value="decodificar">Decodificar</option>
+                    <option value="none">None</option>
+                    <option value="encode">Encode</option>
+                    <option value="decode">Decode</option>
                 </select>
             </div>
 
             <div class="dropdown">
-                <label class="method-label" for="method">Método:</label>
+                <label class="method-label" for="method">Method:</label>
                 <select id="added-method" class="method-select">
-                    <option value="none">Ninguno</option>
-                    <option value="vocales">Vocales</option>
-                    <option value="posicion">Posicion</option>
+                    <option value="none">None</option>
+                    <option value="vocals">Vocals</option>
+                    <option value="position">Position</option>
                     <option value="reversion">Reversion</option>
                 </select>
             </div>
@@ -46,7 +46,7 @@ execute.addEventListener("click", () => {
     let sequence = [];
     sequence.push(first);
     if(message === "") {
-        alert(`Por favor ingrese un mensaje`);
+        alert(`Please enter a message`);
     }
     let addedCards = document.getElementsByClassName("added-card");
     for (let i = 0; i < addedCards.length; i++) {
@@ -62,6 +62,20 @@ execute.addEventListener("click", () => {
         emptyStep = emptyStep || (step.operation === "none") || (step.method === "none");
     });
     if (emptyStep) {
-        alert("Por favor complete todos los campos");
+        alert("Please complete all the fields");
+    }
+    else {
+        let messageToProcess = message;
+        let processedMessage = "";
+        sequence.forEach(step => {
+            processedMessage = process(step.operation, step.method, [messageToProcess]);
+            addUserData(step.operation, messageToProcess, processedMessage);
+            messageToProcess = processedMessage;
+        })
+        let response = document.getElementById("sequence-response");
+        let responseText = document.createElement("div");
+        responseText.className = "";
+        responseText.innerHTML = `<p>¡The sequence was successfully processed!</p>`;
+        response.append(responseText);
     }
 });

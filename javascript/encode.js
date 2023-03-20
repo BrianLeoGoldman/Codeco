@@ -8,7 +8,7 @@ encode.addEventListener("click", () => {
     console.log(method);
     let message = document.getElementById("message").value;
     console.log(message);
-    let encodedMessage = process("codificar", method, [message]);
+    let encodedMessage = process("encode", method, [message]);
     console.log(encodedMessage);
 
     let result = document.getElementById("result");
