@@ -14,7 +14,7 @@
   font-size: 1.5rem;
   color: black; }
 
-.user-main .user-section .user-panel, .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .message, .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .message {
+.user-main .user-section .user-panel {
   border-style: ridge;
   padding-left: 5px;
   padding-right: 5px; }
@@ -104,7 +104,7 @@ header {
     .user-main .user-section .section-title {
       margin: 20px; }
     .user-main .user-section .user-panel {
-      box-shadow: 0px 10px 15px black; }
+      /* box-shadow: 0px 10px 15px black; */ }
       .user-main .user-section .user-panel .user-info {
         margin: 20px; }
         .user-main .user-section .user-panel .user-info .user-bio {
@@ -156,9 +156,10 @@ header {
           width: 45vw; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
             align-self: center; }
-          .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .message {
-            width: 100%; }
-            .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .message p {
+          .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card {
+            width: 100%;
+            margin-bottom: 5px; }
+            .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card .card-body p {
               width: 100%;
               overflow-wrap: break-word; }
         .user-main .message-section .message-panel .message-info .all-messages .decoded-messages {
@@ -170,9 +171,10 @@ header {
           width: 45vw; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
             align-self: center; }
-          .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .message {
-            width: 100%; }
-            .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .message p {
+          .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card {
+            width: 100%;
+            margin-bottom: 5px; }
+            .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card .card-body p {
               width: 100%;
               overflow-wrap: break-word; }
       .user-main .message-section .message-panel .message-info .information {

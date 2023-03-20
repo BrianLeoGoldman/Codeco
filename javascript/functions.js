@@ -16,29 +16,34 @@ export function process(operation, method, messageList) {
     let newMessage;
     if(operation === "encode" || operation === "decode") {
         while(messageList.length > 0) {
-            switch(method) {
-                case "vocals":
-                    newMessage = transform(messageList.shift(), operation, vocalDictionary);
-                    break;
-                case "position":
-                    newMessage = transform(messageList.shift(), operation, positionShiftDictionary);
-                    break;
-                case "reversion":
-                    newMessage = reverseMessage(messageList.shift());
-                    break;
-                case "custom":
-                    let customCoder = createCustomCoder();
-                    newMessage = customCoder.encode(messageList.shift(), operation);
-                    break;
-                default: 
-                    alert(`The operation ${operation} could not be performed. Please seelct a valid method`);
-                    messageList.shift();
-                    break;
+            let messageToProcess = messageList.shift();
+            if(messageToProcess !== "") {
+                switch(method) {
+                    case "vocals":
+                        newMessage = transform(messageToProcess, operation, vocalDictionary);
+                        break;
+                    case "position":
+                        newMessage = transform(messageToProcess, operation, positionShiftDictionary);
+                        break;
+                    case "reversion":
+                        newMessage = reverseMessage(messageToProcess);
+                        break;
+                    case "custom":
+                        let customCoder = createCustomCoder();
+                        newMessage = customCoder.encode(messageToProcess, operation);
+                        break;
+                    default: 
+                        throw `The operation ${operation} could not be performed. Please select a valid method`;
+                        break;
+                }
+            }
+            else {
+                throw `Please enter a message`;
             }
         }
     } 
     else {
-        alert(`The operation ${operation} is not valid`);
+        throw `The operation ${operation} is not valid`;
     }
     return newMessage
 }
@@ -47,11 +52,9 @@ function transform(message, operation, dictionary) {
     let transformedMessage = "";
     let usedDictionary;
     if(operation === "encode") {
-        console.log("Message will be encoded");
         usedDictionary = dictionary;
     }
     if(operation === "decode") {
-        console.log("Message will be decoded");
         usedDictionary = swapDictionary(dictionary);
     }
     for (let c of message) {
@@ -62,12 +65,10 @@ function transform(message, operation, dictionary) {
             transformedMessage = transformedMessage + c;
         }
     }
-    console.log(transformedMessage);
     return transformedMessage;
 } 
 
 function reverseMessage(message) {
-    console.log("Message will be reversed");
     let splitMessage = message.split("");
     let reverseArray = splitMessage.reverse();
     let reversedMessage = reverseArray.join("");
@@ -82,6 +83,7 @@ function swapDictionary(dictionary){
     return swapped;
 }
 
+// NOT IN USE
 function createCustomCoder() {
     let active = "si";
     let list = {};
@@ -97,6 +99,7 @@ function createCustomCoder() {
 
 /* CLASS */
 
+// NOT IN USE
 class CustomCoder {
     constructor(list) {
         this.encodeDictionary = list;
@@ -120,7 +123,6 @@ class CustomCoder {
                 newMessage = newMessage + c;
             }
         }
-        cosnole.log(newMessage);
         return newMessage
     }
 }

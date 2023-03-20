@@ -46,7 +46,9 @@ execute.addEventListener("click", () => {
     let sequence = [];
     sequence.push(first);
     if(message === "") {
-        alert(`Please enter a message`);
+        let modal = document.getElementById("modal-body");
+        modal.innerHTML = `Information missing: please enter a message`
+        $('#errorModal').modal('show');
     }
     let addedCards = document.getElementsByClassName("added-card");
     for (let i = 0; i < addedCards.length; i++) {
@@ -62,20 +64,29 @@ execute.addEventListener("click", () => {
         emptyStep = emptyStep || (step.operation === "none") || (step.method === "none");
     });
     if (emptyStep) {
-        alert("Please complete all the fields");
+        let modal = document.getElementById("modal-body");
+        modal.innerHTML = `Information missing: please choose operation and method`
+        $('#errorModal').modal('show');
     }
     else {
-        let messageToProcess = message;
-        let processedMessage = "";
-        sequence.forEach(step => {
-            processedMessage = process(step.operation, step.method, [messageToProcess]);
-            addUserData(step.operation, step.method, messageToProcess, processedMessage);
-            messageToProcess = processedMessage;
-        })
-        let response = document.getElementById("sequence-response");
-        let responseText = document.createElement("div");
-        responseText.className = "";
-        responseText.innerHTML = `<p>¡The sequence was successfully processed!</p>`;
-        response.append(responseText);
+        try {
+            let messageToProcess = message;
+            let processedMessage = "";
+            sequence.forEach(step => {
+                processedMessage = process(step.operation, step.method, [messageToProcess]);
+                addUserData(step.operation, step.method, messageToProcess, processedMessage);
+                messageToProcess = processedMessage;
+            })
+            let response = document.getElementById("sequence-response");
+            let responseText = document.createElement("div");
+            responseText.className = "";
+            responseText.innerHTML = `<p>¡The sequence was successfully processed!</p>`;
+            response.append(responseText);
+        }
+        catch(error) {
+            let modal = document.getElementById("modal-body");
+            modal.innerHTML = error;
+            $('#errorModal').modal('show');
+        }
     }
 });

@@ -8,18 +8,23 @@ export function get(key) {
 
 export function addUserData(operation, method, inputMessage, outputMessage) {
     let currentUser = get("user");
-    let userData = get(currentUser);
-    let object = {
-        method: method,
-        input: inputMessage, 
-        output: outputMessage, 
-        date: new Date().toDateString()
-    };
-    if(operation === "encode") {
-        userData.encodedMessages.push(object);
+    if(currentUser !== null) {
+        let userData = get(currentUser);
+        let object = {
+            method: method,
+            input: inputMessage, 
+            output: outputMessage, 
+            date: new Date().toDateString()
+        };
+        if(operation === "encode") {
+            userData.encodedMessages.push(object);
+        }
+        if(operation === "decode") {
+            userData.decodedMessages.push(object);
+        }
+        save(currentUser, userData);
     }
-    if(operation === "decode") {
-        userData.decodedMessages.push(object);
+    else {
+        throw `You need to register first`;
     }
-    save(currentUser, userData);
 }

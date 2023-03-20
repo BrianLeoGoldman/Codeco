@@ -21,12 +21,12 @@ function fillMessagePanel(user, messageInfo) {
             <h4>Encoded messages</h4>
     `;
     user.encodedMessages.forEach(item => {
-        htmlString = htmlString + `<div class="message">`;
+        htmlString = htmlString + `<div class="card"><div class="card-body">`;
         htmlString = htmlString + `<p><b>Method</b>: ${item.method}</p>`;
         htmlString = htmlString + `<p><b>Original</b>: ${item.input}</p>`;
         htmlString = htmlString + `<p><b>Encoded</b>: ${item.output}</p>`;
         htmlString = htmlString + `<p><b>Date</b>: ${item.date}</p>`;
-        htmlString = htmlString + `</div>`;
+        htmlString = htmlString + `</div></div>`;
     })
     htmlString = htmlString + `
         </div>
@@ -34,12 +34,12 @@ function fillMessagePanel(user, messageInfo) {
             <h4>Decoded messages</h4>
     `;
     user.decodedMessages.forEach(item => {
-        htmlString = htmlString + `<div class="message">`;
+        htmlString = htmlString + `<div class="card"><div class="card-body">`;
         htmlString = htmlString + `<p><b>Method</b>: ${item.method}</p>`;
         htmlString = htmlString + `<p><b>Original</b>: ${item.input}</p>`;
         htmlString = htmlString + `<p><b>Decoded</b>: ${item.output}</p>`;
         htmlString = htmlString + `<p><b>Date</b>: ${item.date}</p>`;
-        htmlString = htmlString + `</div>`;
+        htmlString = htmlString + `</div></div>`;
     })
     htmlString = htmlString + `
         </div>

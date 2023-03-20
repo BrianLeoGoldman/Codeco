@@ -6,16 +6,20 @@ let encode = document.getElementById("encode");
 encode.addEventListener("click", () => {
     let method = document.getElementById("method").value;
     let message = document.getElementById("message").value;
-    let encodedMessage = process("encode", method, [message]);
-
-    let result = document.getElementById("result");
-    if(encodedMessage === undefined) {
-        result.innerHTML = ``;
+    try {
+        let encodedMessage = process("encode", method, [message]);
+        let result = document.getElementById("result");
+        if(encodedMessage === undefined) {
+            result.innerHTML = ``;
+        }
+        else {
+            result.innerHTML = `${encodedMessage}`;
+            addUserData("encode", method, message, encodedMessage)
+        }
     }
-    else {
-        result.innerHTML = `${encodedMessage}`;
-        addUserData("encode", method, message, encodedMessage)
-
+    catch(error) {
+        let modal = document.getElementById("modal-body");
+        modal.innerHTML = error;
+        $('#errorModal').modal('show');
     }
-    
 });
