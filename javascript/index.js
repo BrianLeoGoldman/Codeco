@@ -36,3 +36,32 @@ register.addEventListener("click", () => {
         success.append(message);
     }
 });
+
+const apiFunction = async () => {
+    try {
+        const result = await fetch("https://inshorts.deta.dev/news?category=all");
+        const json = await result.json();
+        const data = json.data;
+        data.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "carousel-item";
+            div.innerHTML = `
+            <div class="card" style="background: rgb(207,91,120); background: linear-gradient(90deg, rgba(207,91,120,1) 0%, rgba(218,207,82,1) 50%, rgba(252,176,69,1) 100%);">
+                <div class="card-body" >
+                    <a href="${item.url}"><h4 class="card-title">${item.title}</h4></a>
+                    <p class="card-text">${item.content}</p>
+                </div>
+            </div>
+            `;
+            news.append(div); 
+        });
+    } catch(error) {
+        console.log(error);
+    }
+}
+
+let news = document.getElementById("news");
+apiFunction();
+
+
+
