@@ -31,5 +31,32 @@
             }
         }
     }
+    .news-panel {
+        .carousel {
+            .carousel-inner {
+                .carousel-item {
+                    .card {
+                        height: 100px;
+                        background: rgb(22,45,4);
+                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%);
+                        .card-body {
+                            .card-title {
+                                text-align: center;
+                                font-size: 1rem;
+                                color: azure;
+                            }
+                            .card-text {
+                                font-size: 0.7rem;
+                                color: blanchedalmond;
+                                text-align: center;
+                                /* text-align: justify; */
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
 }
 

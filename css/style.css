@@ -63,6 +63,19 @@ header {
       margin: 20px; }
     .index-main .main-panel .register-success h4 {
       text-align: center; }
+  .index-main .news-panel .carousel .carousel-inner .carousel-item .card {
+    height: 100px;
+    background: #162d04;
+    background: linear-gradient(90deg, #162d04 31%, #68087d 92%, #2e204f 97%); }
+    .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
+      text-align: center;
+      font-size: 1rem;
+      color: azure; }
+    .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
+      font-size: 0.7rem;
+      color: blanchedalmond;
+      text-align: center;
+      /* text-align: justify; */ }
 
 .encode-main {
   background-color: whitesmoke; }

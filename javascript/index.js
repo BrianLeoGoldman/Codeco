@@ -18,8 +18,13 @@ register.addEventListener("click", () => {
     let lastname = document.getElementById("lastname");
 
     if(get(firstname.value + lastname.value)) {
-        alert(`Sorry ${firstname.value}, you are registered already`);
         save("user", firstname.value + lastname.value);
+        Swal.fire({
+            title: `Register failed`, 
+            text: `Sorry ${firstname.value}, you are registered already`, 
+            icon: "warning",
+            confirmButtonText: "OK",
+        });
     }
     else {
         let newUser = createUser(firstname.value, lastname.value);
@@ -34,11 +39,18 @@ register.addEventListener("click", () => {
         `
         success.innerText = "";
         success.append(message);
+        Swal.fire({
+            title: `${firstname.value} ${lastname.value}`, 
+            text: "You have been successfully registered!", 
+            icon: "success",
+            confirmButtonText: "OK",
+        });
     }
 });
 
-const apiFunction = async () => {
+const fetchNews = async () => {
     try {
+        let news = document.getElementById("news");
         const result = await fetch("https://inshorts.deta.dev/news?category=all");
         const json = await result.json();
         const data = json.data;
@@ -46,7 +58,7 @@ const apiFunction = async () => {
             const div = document.createElement("div");
             div.className = "carousel-item";
             div.innerHTML = `
-            <div class="card" style="background: rgb(207,91,120); background: linear-gradient(90deg, rgba(207,91,120,1) 0%, rgba(218,207,82,1) 50%, rgba(252,176,69,1) 100%);">
+            <div class="card">
                 <div class="card-body" >
                     <a href="${item.url}"><h4 class="card-title">${item.title}</h4></a>
                     <p class="card-text">${item.content}</p>
@@ -60,8 +72,16 @@ const apiFunction = async () => {
     }
 }
 
-let news = document.getElementById("news");
-apiFunction();
+fetchNews();
 
 
 
+/* const prueba = (valor) => {
+    return new Promise((resolve, rejected) => {
+        setTimeout(() => {
+            valor ? resolve(console.log("Promesa resuelta" + ["Pepito", "Pepita"])) : rejected(console.log("Promesa rechazada: intente luego"))
+        }, 2000)
+    })
+}
+
+prueba(false) */
