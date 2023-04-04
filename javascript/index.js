@@ -75,3 +75,27 @@ const fetchNews = async () => {
 
 fetchNews();
 
+const test = async () => {
+    const encodedParams = new URLSearchParams();
+    encodedParams.append("source", "en");
+    encodedParams.append("target", "es");
+    encodedParams.append("q", "Hello, world!");
+
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'Accept-Encoding': 'application/gzip',
+            'X-RapidAPI-Key': '294a9b42cdmsha20092a4c735133p186789jsnb5285f98aa78',
+            'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com'
+        },
+        body: encodedParams
+    };
+
+    fetch('https://google-translate1.p.rapidapi.com/language/translate/v2', options)
+        .then(response => response.json())
+        .then(response => console.log(response))
+        .catch(err => console.error(err));
+}
+
+test()

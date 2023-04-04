@@ -84,20 +84,6 @@ header {
       text-align: center;
       /* text-align: justify; */ }
 
-footer {
-  background-color: black;
-  text-align: center;
-  width: 100%;
-  padding-bottom: 1px;
-  font-size: 0.8rem; }
-  footer p {
-    color: white;
-    font-family: 'Cormorant Unicase', serif;
-    font-size: 0.8rem; }
-  footer .copyright {
-    font-size: 0.7rem;
-    padding-top: 5px; }
-
 .encode-main {
   background-color: whitesmoke; }
   .encode-main .encode-panel {
@@ -289,3 +275,36 @@ footer {
       background-color: #4444ae;
       border: none;
       box-shadow: 0 5px 5px grey; }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1px;
+  font-size: 0.8rem; }
+  footer .text {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    footer .text .footer-text {
+      color: white;
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.8rem;
+      font-size: 0.7rem;
+      padding-top: 5px; }
+  footer .logos {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    footer .logos img {
+      width: 25px;
+      height: 25px;
+      margin: 5px; }
