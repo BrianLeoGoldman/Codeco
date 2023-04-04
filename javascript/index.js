@@ -13,6 +13,7 @@ function createUser(firstname, lastname) {
 
 let register = document.getElementById("register");
 
+// TODO: check that firstname and lastanem is not empty
 register.addEventListener("click", () => {
     let firstname = document.getElementById("firstname");
     let lastname = document.getElementById("lastname");
@@ -74,14 +75,3 @@ const fetchNews = async () => {
 
 fetchNews();
 
-
-
-/* const prueba = (valor) => {
-    return new Promise((resolve, rejected) => {
-        setTimeout(() => {
-            valor ? resolve(console.log("Promesa resuelta" + ["Pepito", "Pepita"])) : rejected(console.log("Promesa rechazada: intente luego"))
-        }, 2000)
-    })
-}
-
-prueba(false) */

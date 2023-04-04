@@ -10,7 +10,7 @@ add.addEventListener("click", () => {
     newCard.innerHTML = `
         <div class="dropdowns">
             <div class="dropdown">
-                <label class="operation-label" for="operation">Operation:</label>
+                <label class="operation-label" for="operation">OPERATION</label>
                 <select id="added-operation" class="operation-select">
                     <option value="none">None</option>
                     <option value="encode">Encode</option>
@@ -19,7 +19,7 @@ add.addEventListener("click", () => {
             </div>
 
             <div class="dropdown">
-                <label class="method-label" for="method">Method:</label>
+                <label class="method-label" for="method">METHOD</label>
                 <select id="added-method" class="method-select">
                     <option value="none">None</option>
                     <option value="vocals">Vocals</option>

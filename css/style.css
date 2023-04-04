@@ -9,17 +9,12 @@
   padding: 0;
   box-sizing: border-box; }
 
-.index-main .main-panel .welcome-text .text1, .index-main .main-panel .welcome-text .text2, .encode-main .encode-panel .encode-text, .user-main .user-section .section-title .title, .user-main .message-section .section-title .title, .sequence-main .sequence-panel .sequence-text {
+.index-main .main-panel .welcome-text .text1, .user-main .message-section .section-title .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: black; }
 
-.user-main .user-section .user-panel {
-  border-style: ridge;
-  padding-left: 5px;
-  padding-right: 5px; }
-
-.index-main .main-panel .welcome-text, .index-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .user-section .user-panel .user-info .information, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info, .user-main .message-section .message-panel .message-info .information, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card {
+.index-main .main-panel .welcome-text, .index-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .section-title .title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .user-section .user-panel .user-info .information, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info, .user-main .message-section .message-panel .message-info .information, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card {
   align-items: center;
   align-content: center; }
 
@@ -51,22 +46,34 @@ header {
     padding-top: 20px;
     padding-bottom: 20px; }
     .index-main .main-panel .welcome-text {
-      margin: 20px; }
+      margin: 15px; }
+      .index-main .main-panel .welcome-text .text1 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
       .index-main .main-panel .welcome-text .text2 {
-        margin-top: 30px; }
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 12px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .index-main .main-panel .user-info {
       width: 400px;
       margin-left: 20px;
       margin-right: 20px;
       margin-bottom: 20px; }
     .index-main .main-panel .register {
-      margin: 20px; }
+      margin: 20px;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
     .index-main .main-panel .register-success h4 {
-      text-align: center; }
+      font-size: 0.9rem;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
   .index-main .news-panel .carousel .carousel-inner .carousel-item .card {
     height: 100px;
-    background: #162d04;
-    background: linear-gradient(90deg, #162d04 31%, #68087d 92%, #2e204f 97%); }
+    /* background: rgb(22,45,4);
+                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
+    background: #2e204f;
+    background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
     .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
       text-align: center;
       font-size: 1rem;
@@ -77,6 +84,20 @@ header {
       text-align: center;
       /* text-align: justify; */ }
 
+footer {
+  background-color: black;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1px;
+  font-size: 0.8rem; }
+  footer p {
+    color: white;
+    font-family: 'Cormorant Unicase', serif;
+    font-size: 0.8rem; }
+  footer .copyright {
+    font-size: 0.7rem;
+    padding-top: 5px; }
+
 .encode-main {
   background-color: whitesmoke; }
   .encode-main .encode-panel {
@@ -86,10 +107,15 @@ header {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px; }
+    .encode-main .encode-panel .encode-text p {
+      text-align: center;
+      font-size: 1rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .encode-main .encode-panel .dropdown {
-      padding: 30px; }
+      padding: 20px; }
       .encode-main .encode-panel .dropdown .method-label {
-        margin-right: 10px; }
+        margin-right: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
       .encode-main .encode-panel .dropdown .method-select {
         border-radius: 3px; }
     .encode-main .encode-panel .input-group {
@@ -99,11 +125,16 @@ header {
         margin-left: 50px;
         width: 120px; }
         .encode-main .encode-panel .input-group .input-group-prepend .input-group-text {
-          width: 120px; }
+          width: 120px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
       .encode-main .encode-panel .input-group .form-control {
         margin-right: 50px; }
     .encode-main .encode-panel .code-button {
-      margin: 20px; }
+      margin: 20px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
 
 .user-main {
   background-color: whitesmoke; }
@@ -115,43 +146,60 @@ header {
     padding-top: 20px;
     padding-bottom: 20px; }
     .user-main .user-section .section-title {
-      margin: 20px; }
+      margin: 10px; }
+      .user-main .user-section .section-title .title {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .user-main .user-section .user-panel {
-      /* box-shadow: 0px 10px 15px black; */ }
+      padding: 15px;
+      box-shadow: 0 5px 5px grey; }
       .user-main .user-section .user-panel .user-info {
-        margin: 20px; }
+        margin: 10px; }
         .user-main .user-section .user-panel .user-info .user-bio {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          font-size: 0.7rem;
-          color: black; }
+          font-size: 0.7rem; }
           .user-main .user-section .user-panel .user-info .user-bio .user-names {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center; }
             .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
-              margin-left: 30px;
-              margin-right: 30px;
-              font-family: monospace;
-              font-weight: 500; }
+              font-size: 1rem;
+              margin-left: 15px;
+              margin-right: 15px;
+              font-weight: 500;
+              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              color: white; }
           .user-main .user-section .user-panel .user-info .user-bio .date {
-            margin-top: 30px; }
+            font-size: 1rem;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white; }
         .user-main .user-section .user-panel .user-info .information {
           margin: 20px; }
+    .user-main .user-section .card-msg .card-body-msg {
+      background: #2e204f;
+      background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
   .user-main .message-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 10px;
+    padding-bottom: 10px; }
     .user-main .message-section .section-title {
-      margin: 20px; }
+      margin: 10px; }
+      .user-main .message-section .section-title .title {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .user-main .message-section .message-panel .message-info {
-      margin: 20px; }
+      margin: 10px; }
       .user-main .message-section .message-panel .message-info .all-messages {
         display: flex;
         flex-direction: row;
@@ -166,9 +214,11 @@ header {
           justify-content: center;
           align-items: start;
           margin-right: 20px;
-          width: 45vw; }
+          width: 45vw;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
-            align-self: center; }
+            align-self: center;
+            font-size: 0.9rem; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card {
             width: 100%;
             margin-bottom: 5px; }
@@ -181,9 +231,11 @@ header {
           justify-content: center;
           align-items: start;
           margin-left: 20px;
-          width: 45vw; }
+          width: 45vw;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
-            align-self: center; }
+            align-self: center;
+            font-size: 0.9rem; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card {
             width: 100%;
             margin-bottom: 5px; }
@@ -191,7 +243,7 @@ header {
               width: 100%;
               overflow-wrap: break-word; }
       .user-main .message-section .message-panel .message-info .information {
-        margin: 20px; }
+        margin: 10px; }
 
 .sequence-main .sequence-panel {
   display: flex;
@@ -199,8 +251,11 @@ header {
   justify-content: center;
   align-items: center; }
   .sequence-main .sequence-panel .sequence-text {
+    text-align: center;
+    font-size: 1rem;
     margin-top: 15px;
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
   .sequence-main .sequence-panel .cards .card {
     width: 120vh;
     padding: 10px;
@@ -215,10 +270,22 @@ header {
       align-items: center; }
       .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
         padding: 10px; }
+        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .operation-label {
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .method-label {
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
   .sequence-main .sequence-panel .buttons {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center; }
-    .sequence-main .sequence-panel .buttons .sequence-button {
-      margin: 15px; }
+    .sequence-main .sequence-panel .buttons .sequence-button-add {
+      margin: 15px;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
+    .sequence-main .sequence-panel .buttons .sequence-button-execute {
+      margin: 15px;
+      background-color: #4444ae;
+      border: none;
+      box-shadow: 0 5px 5px grey; }

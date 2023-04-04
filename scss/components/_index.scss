@@ -5,14 +5,17 @@
         padding-top: 20px;
         padding-bottom: 20px;
         .welcome-text {
-            margin: 20px;
+            margin: 15px;
             @extend %centered;
             .text1 {
                 @extend %title;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
             .text2 {
-                @extend %title;
-                margin-top: 30px;
+                text-align: center;
+                font-size: 1.1rem;
+                margin-top: 12px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
         }
         .user-info {
@@ -23,11 +26,16 @@
         }
         .register {
             margin: 20px;
+            background-color: blueviolet;
+            border: none;
+            box-shadow: 0 5px 5px grey;
         }
         .register-success {
             @extend %centered;
             h4 {
+                font-size: 0.9rem;
                 text-align: center;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
         }
     }
@@ -37,8 +45,10 @@
                 .carousel-item {
                     .card {
                         height: 100px;
-                        background: rgb(22,45,4);
-                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%);
+                        /* background: rgb(22,45,4);
+                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
+                        background: rgb(46,32,79);
+                        background: linear-gradient(90deg, rgba(46,32,79,1) 5%, rgba(104,8,125,1) 30%, rgba(46,32,79,1) 65%);
                         .card-body {
                             .card-title {
                                 text-align: center;
@@ -59,4 +69,21 @@
         
     }
 }
+footer {
+    background-color: black;
+    text-align: center;
+    width: 100%;     
+    padding-bottom: 1px;
+    font-size: 0.8rem;
+    p {
+        color: white;
+        font-family: 'Cormorant Unicase', serif;
+        font-size: 0.8rem;
+    }
+    .copyright {
+        font-size: 0.7rem;
+        padding-top: 5px;
+    }
+}
+
 

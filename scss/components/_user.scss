@@ -5,35 +5,45 @@
         padding-top: 20px;
         padding-bottom: 20px;
         .section-title {
-            margin: 20px;
+            margin: 10px;
             @extend %centered;
             .title {
-                @extend %title;
+                text-align: center;
+                font-size: 1.2rem;
+                @extend %centered;
+                margin-bottom: 15px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
         }
         .user-panel {
             @extend %centered;
-            @extend %border;
-            /* box-shadow: 0px 10px 15px black; */
+            padding: 15px;
+            box-shadow: 0 5px 5px grey;
             .user-info {
-                margin: 20px;
+                margin: 10px;
                 @extend %centered;
                 .user-bio {
                     @include flex(flex, column, center, center);
                     font-size: 0.7rem;
-                    color: nth($colors, 2);
                     .user-names {
                         @include flex(flex, row, center, center);
                         h4 {
-                            margin-left: 30px;
-                            margin-right: 30px;
-                            font-family: monospace;
+                            font-size: 1rem;
+                            margin-left: 15px;
+                            margin-right: 15px;
                             font-weight: 500;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            color: white;
                         }
                     
                     }
                     .date {
-                        margin-top: 30px;
+                        font-size: 1rem;
+                            margin-left: 15px;
+                            margin-right: 15px;
+                            font-weight: 500;
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                            color: white;
                     }
                 }
                 .information {
@@ -42,22 +52,29 @@
                 }
             }
         }
+        .card-msg {
+            .card-body-msg {
+                background: rgb(46,32,79);
+                background: linear-gradient(90deg, rgba(46,32,79,1) 5%, rgba(104,8,125,1) 30%, rgba(46,32,79,1) 65%);
+            }
+        }
     }
     .message-section {
         @include flex(flex, column, center, center);
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         .section-title {
-            margin: 20px;
+            margin: 10px;
             @extend %centered;
             .title {
                 @extend %title;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
         }
         .message-panel {
             @extend %centered;
             .message-info {
-                margin: 20px;
+                margin: 10px;
                 @extend %centered;
                 .all-messages {
                     @include flex(flex, row, center, start);
@@ -68,8 +85,10 @@
                         @include flex(flex, column, center, start);
                         margin-right: 20px;
                         width: 45vw;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                         h4 {
                             align-self: center;
+                            font-size: 0.9rem;
                         }
                         .card {
                             width: 100%;
@@ -87,8 +106,10 @@
                         @include flex(flex, column, center, start);
                         margin-left: 20px;
                         width: 45vw;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                         h4 {
                             align-self: center;
+                            font-size: 0.9rem;
                         }
                         .card {
                             width: 100%;
@@ -104,7 +125,7 @@
                     }
                 }
                 .information {
-                    margin: 20px;
+                    margin: 10px;
                     @extend %centered;
                 }
             }

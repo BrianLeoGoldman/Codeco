@@ -4,13 +4,16 @@
         @include flex(flex, column, center, center);
         padding-top: 20px;
         padding-bottom: 20px;
-        .encode-text {
-            @extend %title;
+        .encode-text p {
+            text-align: center;
+            font-size: 1rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         .dropdown {
-            padding: 30px;
+            padding: 20px;
             .method-label {
                 margin-right: 10px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
             .method-select {
                 border-radius: 3px;
@@ -24,6 +27,7 @@
                 width: 120px;
                 .input-group-text {
                     width: 120px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 }
             }
             .form-control {
@@ -32,6 +36,10 @@
         }
         .code-button {
             margin: 20px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: blueviolet;
+            border: none;
+            box-shadow: 0 5px 5px grey;
         }
     }
 }

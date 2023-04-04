@@ -3,10 +3,12 @@
         @include flex(flex, column, center, center);
         @extend %centered;
         .sequence-text {
-            @extend %title;
+            text-align: center;
+            font-size: 1rem;
             @extend %centered;
             margin-top: 15px;
             margin-bottom: 15px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         .cards {
             .card {
@@ -22,14 +24,29 @@
                     @include flex(flex, row, center, center);
                     .dropdown {
                         padding: 10px;
+                        .operation-label {
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        }
+                        .method-label {
+                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        }
                     }
                 }
             }
         }
         .buttons {
             @include flex(flex, row, center, center);
-            .sequence-button {
+            .sequence-button-add {
                 margin: 15px;
+                background-color: blueviolet;
+                border: none;
+                box-shadow: 0 5px 5px grey;
+            }
+            .sequence-button-execute {
+                margin: 15px;
+                background-color: rgb(68, 68, 174);
+                border: none;
+                box-shadow: 0 5px 5px grey;
             }
         }
     }
