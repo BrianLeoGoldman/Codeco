@@ -38,3 +38,15 @@ green;
         transition: all .3s;
     }
 }
+
+// ANIMATIONS //
+
+@keyframes change-color {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+@keyframes rotate {
+    from {transform:rotateY(0deg);}
+    to {transform:rotateY(360deg);}
+}

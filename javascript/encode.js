@@ -13,13 +13,22 @@ encode.addEventListener("click", () => {
             result.innerHTML = ``;
         }
         else {
+            let padlock = document.getElementById("padlock");
+            padlock.classList.add("animation");
             result.innerHTML = `${encodedMessage}`;
-            addUserData("encode", method, message, encodedMessage)
+            addUserData("encode", method, message, encodedMessage);
+            setTimeout(() => {
+                padlock.classList.remove("animation");
+            }, 3000);
+            
         }
     }
     catch(error) {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = error;
-        $('#errorModal').modal('show');
+        Swal.fire({
+            title: `Encoding failed`, 
+            text: `${error}`, 
+            icon: "warning",
+            confirmButtonText: "Ok",
+        });
     }
 });

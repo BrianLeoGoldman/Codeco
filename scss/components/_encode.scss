@@ -9,37 +9,50 @@
             font-size: 1rem;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
-        .dropdown {
-            padding: 20px;
-            .method-label {
-                margin-right: 10px;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-            .method-select {
-                border-radius: 3px;
-            }
-        }
-        .input-group {
-            margin-left: 40px;
-            margin-right: 40px;
-            .input-group-prepend {
-                margin-left: 50px;
-                width: 120px;
-                .input-group-text {
-                    width: 120px;
+        .encoding-panel {
+            @include flex(flex, row, center, center);
+            .input-group {
+                @include flex(flex, column, center, center);
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 15px;
+                .textarea {
+                    width: 300px;
+                    height: 250px;
                     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 }
             }
-            .form-control {
-                margin-right: 50px;
+            .medium-panel {
+                @include flex(flex, column, center, center);
+                .dropdown {
+                    @include flex(flex, column, center, center);
+                    padding: 20px;
+                    .method-label {
+                        margin-right: 10px;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    }
+                    .method-select {
+                        border-radius: 3px;
+                    }
+                }
+                
+                .code-button {
+                    margin: 20px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    background-color: blueviolet;
+                    border: none;
+                    box-shadow: 0 5px 5px grey;
+                }
+                .padlock {
+                    height: 75px;
+                    width: 60px;
+                }
+                .animation {
+                    animation-name: rotate;
+                    animation-duration: 3s;
+                }
             }
         }
-        .code-button {
-            margin: 20px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: blueviolet;
-            border: none;
-            box-shadow: 0 5px 5px grey;
-        }
+    
     }
 }

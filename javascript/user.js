@@ -4,10 +4,11 @@ function fillUserPanel(user, userInfo) {
     userInfo.innerHTML = `
     <div class="user-bio">
         <div class="user-names">
-            <h4>FIRSTNAME: ${user.firstname}</h4>
-            <h4>LASTNAME: ${user.lastname}</h4>
+            <h4 class="user-data">FIRSTNAME: ${user.firstname}</h4>
+            <h4 class="user-data">LASTNAME: ${user.lastname}</h4>
         </div>
-        <h4 class="date">REGISTERED: ${user.register}</h4>
+        <h4 class="user-data">EMAIL: ${user.email}</h4>
+        <h4 class="user-data">REGISTERED: ${user.register}</h4>
     </div>
     `
     return userInfo

@@ -18,8 +18,11 @@ decode.addEventListener("click", () => {
         }
     }
     catch(error) {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = error;
-        $('#errorModal').modal('show');
+        Swal.fire({
+            title: `Decoding failed`, 
+            text: `${error}`, 
+            icon: "warning",
+            confirmButtonText: "Ok",
+        });
     }
 });

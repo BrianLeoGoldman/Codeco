@@ -46,9 +46,12 @@ execute.addEventListener("click", () => {
     let sequence = [];
     sequence.push(first);
     if(message === "") {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = `Information missing: please enter a message`
-        $('#errorModal').modal('show');
+        Swal.fire({
+            title: `Operation failed`, 
+            text: `Information missing: please enter a message`, 
+            icon: "warning",
+            confirmButtonText: "Ok",
+        });
     }
     let addedCards = document.getElementsByClassName("added-card");
     for (let i = 0; i < addedCards.length; i++) {
@@ -64,9 +67,12 @@ execute.addEventListener("click", () => {
         emptyStep = emptyStep || (step.operation === "none") || (step.method === "none");
     });
     if (emptyStep) {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = `Information missing: please choose operation and method`
-        $('#errorModal').modal('show');
+        Swal.fire({
+            title: `Operation failed`, 
+            text: `Information missing: please choose operation and method`, 
+            icon: "warning",
+            confirmButtonText: "Ok",
+        });
     }
     else {
         try {
@@ -84,9 +90,12 @@ execute.addEventListener("click", () => {
             response.append(responseText);
         }
         catch(error) {
-            let modal = document.getElementById("modal-body");
-            modal.innerHTML = error;
-            $('#errorModal').modal('show');
+            Swal.fire({
+                title: `Operation failed`, 
+                text: `${error}`, 
+                icon: "warning",
+                confirmButtonText: "Ok",
+            });
         }
     }
 });
