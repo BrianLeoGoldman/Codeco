@@ -33,11 +33,17 @@ header nav .nav .nav-item .nav-link:hover {
   to {
     background-color: yellow; } }
 
-@keyframes rotate {
+@keyframes rotateY {
   from {
     transform: rotateY(0deg); }
   to {
     transform: rotateY(360deg); } }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 header {
   /* background-color: nth($colors, 1); */
@@ -78,8 +84,8 @@ header {
       padding-top: 10px;
       padding-left: 25px;
       padding-right: 25px;
-      background: rgba(46, 32, 79, 0.501);
-      background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
+      background: #20274f;
+      background: linear-gradient(90deg, #20274f 5%, #204f43 30%, #20274f 65%); }
       .index-main .news-panel .carousel .carousel-inner .carousel-item .title {
         text-align: center;
         font-size: 1rem;
@@ -89,21 +95,32 @@ header {
         color: blanchedalmond;
         text-align: center; }
   .index-main .weather-panel {
-    background: rgba(46, 32, 79, 0.501);
-    background: linear-gradient(90deg, #20214f 5%, #08427d 30%, #204f43 65%); }
+    height: 170px; }
     .index-main .weather-panel .weather {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      height: 120px; }
+      height: 120px;
+      align-items: center; }
+      .index-main .weather-panel .weather .loading {
+        height: 75px;
+        width: 75px;
+        animation-name: rotate;
+        animation-duration: 1.5s; }
+      .index-main .weather-panel .weather .invisible {
+        display: none; }
       .index-main .weather-panel .weather .forecast {
+        background: rgba(46, 32, 79, 0.501);
+        background: linear-gradient(90deg, #20214f 5%, #08427d 30%, #204f43 65%);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border-radius: 5px;
         padding: 5px;
-        margin: 5px; }
+        margin: 5px;
+        margin-top: 20px; }
         .index-main .weather-panel .weather .forecast .title {
           text-align: center;
           font-size: 1.2rem;
@@ -113,7 +130,7 @@ header {
           width: 50px; }
         .index-main .weather-panel .weather .forecast .text {
           text-align: center;
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #7bd6d6; }
 
 .encode-main {
@@ -179,7 +196,7 @@ header {
           height: 75px;
           width: 60px; }
         .encode-main .encode-panel .encoding-panel .medium-panel .rotation {
-          animation-name: rotate;
+          animation-name: rotateY;
           animation-duration: 1.5s; }
 
 .sequence-main {
@@ -296,6 +313,8 @@ header {
     .user-main .user-section .user-panel {
       background-color: whitesmoke;
       padding: 15px;
+      padding-bottom: 10px;
+      border-radius: 5px;
       box-shadow: 0 5px 5px grey; }
       .user-main .user-section .user-panel .user-info {
         margin: 10px; }
@@ -324,6 +343,9 @@ header {
             font-weight: 500;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             color: black; }
+          .user-main .user-section .user-panel .user-info .user-bio .user-icon {
+            height: 50px;
+            width: 50px; }
         .user-main .user-section .user-panel .user-info .information {
           font-size: 1rem;
           margin-left: 15px;
@@ -358,7 +380,7 @@ header {
           justify-content: center;
           align-items: start;
           margin-right: 20px;
-          width: 45vw;
+          width: 40vw;
           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
             align-self: center;
@@ -375,7 +397,7 @@ header {
           justify-content: center;
           align-items: start;
           margin-left: 20px;
-          width: 45vw;
+          width: 40vw;
           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
             align-self: center;

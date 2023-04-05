@@ -26,7 +26,7 @@ decode.addEventListener("click", () => {
             title: `Decoding failed`, 
             text: `${error}`, 
             icon: "warning",
-            confirmButtonText: "Ok",
+            confirmButtonText: "OK",
         });
     }
 });

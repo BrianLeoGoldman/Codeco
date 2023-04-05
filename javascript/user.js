@@ -9,6 +9,7 @@ function fillUserPanel(user, userInfo) {
         </div>
         <h4 class="user-data">EMAIL: ${user.email}</h4>
         <h4 class="user-data">REGISTERED: ${user.register}</h4>
+        <img class="user-icon" src='../images/user.png' alt="User icon">
     </div>
     `
     return userInfo

@@ -19,6 +19,8 @@
             background-color: nth($colors, 1); 
             @extend %centered;
             padding: 15px;
+            padding-bottom: 10px;
+            border-radius: 5px;
             box-shadow: 0 5px 5px grey;
             .user-info {
                 margin: 10px;
@@ -45,6 +47,10 @@
                         font-weight: 500;
                         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                         color: black;
+                    }
+                    .user-icon {
+                        height: 50px;
+                        width: 50px;
                     }
                 }
                 .information {
@@ -83,7 +89,7 @@
                     .encoded-messages {
                         @include flex(flex, column, center, start);
                         margin-right: 20px;
-                        width: 45vw;
+                        width: 40vw;
                         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                         h4 {
                             align-self: center;
@@ -104,7 +110,7 @@
                     .decoded-messages {
                         @include flex(flex, column, center, start);
                         margin-left: 20px;
-                        width: 45vw;
+                        width: 40vw;
                         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                         h4 {
                             align-self: center;

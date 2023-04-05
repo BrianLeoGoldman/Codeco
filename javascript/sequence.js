@@ -1,6 +1,8 @@
 import { process } from './functions.js';
 import { addUserData, save } from './storage.js';
 
+let sequenceBeat = new Audio('../sounds/padlock.wav');
+let failureBeat = new Audio('../sounds/failed-operation.wav');
 let add = document.getElementById("add");
 
 add.addEventListener("click", () => {
@@ -46,11 +48,12 @@ execute.addEventListener("click", () => {
     let sequence = [];
     sequence.push(first);
     if(message === "") {
+        failureBeat.play();
         Swal.fire({
             title: `Operation failed`, 
             text: `Information missing: please enter a message`, 
             icon: "warning",
-            confirmButtonText: "Ok",
+            confirmButtonText: "OK",
         });
     }
     let addedCards = document.getElementsByClassName("added-card");
@@ -67,11 +70,12 @@ execute.addEventListener("click", () => {
         emptyStep = emptyStep || (step.operation === "none") || (step.method === "none");
     });
     if (emptyStep) {
+        failureBeat.play();
         Swal.fire({
             title: `Operation failed`, 
             text: `Information missing: please choose operation and method`, 
             icon: "warning",
-            confirmButtonText: "Ok",
+            confirmButtonText: "OK",
         });
     }
     else {
@@ -83,18 +87,24 @@ execute.addEventListener("click", () => {
                 addUserData(step.operation, step.method, messageToProcess, processedMessage);
                 messageToProcess = processedMessage;
             })
-            let response = document.getElementById("sequence-response");
-            let responseText = document.createElement("div");
-            responseText.className = "";
-            responseText.innerHTML = `<p>¡The sequence was successfully processed!</p>`;
-            response.append(responseText);
+            sequenceBeat.play();
+            setTimeout(() => {
+                sequenceBeat.play();
+            }, 500);
+            Swal.fire({
+            title: `Sequence completed!`, 
+            text: `All operations were performed with no issues`, 
+            icon: "success",
+            confirmButtonText: "OK",
+            });
         }
         catch(error) {
+            failureBeat.play();
             Swal.fire({
                 title: `Operation failed`, 
                 text: `${error}`, 
                 icon: "warning",
-                confirmButtonText: "Ok",
+                confirmButtonText: "OK",
             });
         }
     }

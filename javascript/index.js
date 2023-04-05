@@ -26,7 +26,9 @@ const getWeather = async () => {
         const options = {
             method: 'GET',
         };
-        const result = await fetch('http://www.7timer.info/bin/api.pl?lon=44.17&lat=23.09&product=civillight&output=json', options);
+        let lat = '-34.61315';
+        let lon = '-58.37723';
+        const result = await fetch(`http://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`, options);
         const json = await result.json();
         const data = json.dataseries;
         data.forEach(item => {
@@ -34,10 +36,15 @@ const getWeather = async () => {
             div.className = "forecast";
             let date = item.date;
             let weatherCode = item.weather;
+            let temperature = item.temp2m;
             div.innerHTML = `
                 <h4 class="title">${parseDate(date.toString())}</h4>
                 <img class="weather-icon" src=${chooseWeatherPic(weatherCode)} alt="Weather icon">
+                <p class="text">MIN: ${temperature.min}</p>
+                <p class="text">MAX: ${temperature.max}</p>
             `;
+            let loading = document.getElementById("loading");
+            loading.classList.add("invisible");
             weather.append(div); 
         });
     } catch(error) {

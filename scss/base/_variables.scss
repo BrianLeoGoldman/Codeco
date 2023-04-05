@@ -47,7 +47,12 @@ rgb(160, 157, 208);
     to {background-color: yellow;}
 }
 
-@keyframes rotate {
+@keyframes rotateY {
     from {transform:rotateY(0deg);}
     to {transform:rotateY(360deg);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
 }

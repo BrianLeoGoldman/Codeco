@@ -26,7 +26,7 @@ encode.addEventListener("click", () => {
             title: `Encoding failed`, 
             text: `${error}`, 
             icon: "warning",
-            confirmButtonText: "Ok",
+            confirmButtonText: "OK",
         });
     }
 });
