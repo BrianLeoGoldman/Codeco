@@ -1,5 +1,5 @@
 .register-main {
-    background-color: nth($colors, 1);
+    background-color: nth($colors, 5);
     .main-panel {
         @include flex(flex, column, center, center);
         padding-top: 20px;

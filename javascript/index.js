@@ -1,3 +1,5 @@
+import { parseDate, chooseWeatherPic } from './functions.js';
+
 const fetchNews = async () => {
     try {
         let news = document.getElementById("news");
@@ -8,12 +10,8 @@ const fetchNews = async () => {
             const div = document.createElement("div");
             div.className = "carousel-item";
             div.innerHTML = `
-            <div class="card">
-                <div class="card-body" >
-                    <a href="${item.url}"><h4 class="card-title">${item.title}</h4></a>
-                    <p class="card-text">${item.content}</p>
-                </div>
-            </div>
+                <a href="${item.url}"><h4 class="title">${item.title}</h4></a>
+                <p class="text">${item.content}</p>
             `;
             news.append(div); 
         });
@@ -22,34 +20,31 @@ const fetchNews = async () => {
     }
 }
 
+const getWeather = async () => {
+    try {
+        let weather = document.getElementById("weather");
+        const options = {
+            method: 'GET',
+        };
+        const result = await fetch('http://www.7timer.info/bin/api.pl?lon=44.17&lat=23.09&product=civillight&output=json', options);
+        const json = await result.json();
+        const data = json.dataseries;
+        data.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "forecast";
+            let date = item.date;
+            let weatherCode = item.weather;
+            div.innerHTML = `
+                <h4 class="title">${parseDate(date.toString())}</h4>
+                <img class="weather-icon" src=${chooseWeatherPic(weatherCode)} alt="Weather icon">
+            `;
+            weather.append(div); 
+        });
+    } catch(error) {
+        console.log(error);
+    }
+}
+
 fetchNews();
+getWeather();
 
-/* const getLanguages = async () => {
-    const options = {
-        method: 'GET',
-    };
-    fetch('https://libretranslate.com/languages', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-}
-
-const translate = async (text) => {
-    const res = await fetch("https://libretranslate.com/translate", {
-	method: "POST",
-	body: JSON.stringify({
-		q: "",
-		source: "auto",
-		target: "en",
-		format: "text",
-		api_key: ""
-	}),
-	headers: { "Content-Type": "application/json" }
-});
-
-console.log(await res.json());
-}
-
-
-getLanguages()
-translate() */

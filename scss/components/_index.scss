@@ -1,5 +1,5 @@
 .index-main {
-    background-color: nth($colors, 1);
+    background-color: nth($colors, 5);
     .main-panel {
         @include flex(flex, column, center, center);
         padding-top: 20px;
@@ -24,30 +24,53 @@
             margin-bottom: 30px;
             .carousel-inner {
                 .carousel-item {
-                    .card {
-                        height: 125px;
-                        /* background: rgb(22,45,4);
-                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
-                        background: rgb(46,32,79);
-                        background: linear-gradient(90deg, rgba(46,32,79,1) 5%, rgba(104,8,125,1) 30%, rgba(46,32,79,1) 65%);
-                        .card-body {
-                            .card-title {
-                                text-align: center;
-                                font-size: 1rem;
-                                color: azure;
-                            }
-                            .card-text {
-                                font-size: 0.7rem;
-                                color: blanchedalmond;
-                                text-align: center;
-                                /* text-align: justify; */
-                            }
-                        }
+                    height: 100px;
+                    padding-top: 10px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    background: rgba(46, 32, 79, 0.501);
+                    background: linear-gradient(90deg, rgba(46,32,79,1) 5%, rgba(104,8,125,1) 30%, rgba(46,32,79,1) 65%);
+                    .title {
+                        text-align: center;
+                        font-size: 1rem;
+                        color: azure;
+                    }
+                    .text {
+                        font-size: 0.7rem;
+                        color: blanchedalmond;
+                        text-align: center;
                     }
                 }
             }
         }
-        
+    }
+    .weather-panel {
+        background: rgba(46, 32, 79, 0.501);
+        background: linear-gradient(90deg, rgb(32, 33, 79) 5%, rgb(8, 66, 125) 30%, rgb(32, 79, 67) 65%);
+        .weather {
+            @include flex(flex, row, center, center);
+            height: 120px;
+            .forecast {
+                @include flex(flex, column, center, center);
+                @extend %border;
+                padding: 5px;
+                margin: 5px;
+                .title {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: azure;
+                }
+                .weather-icon {
+                    height: 50px;
+                    width: 50px;
+                }
+                .text {
+                    text-align: center;
+                    font-size: 1rem;
+                    color: rgb(123, 214, 214);
+                }
+            }
+        }
     }
 }
 

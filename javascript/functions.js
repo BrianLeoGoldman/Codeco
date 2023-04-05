@@ -12,6 +12,19 @@ const positionShiftDictionary = {
 
 /* FUNCTIONS */
 
+export function parseDate(date) {
+    let year = date.slice(0, 4);
+    let month = date.slice(4, 6);
+    let day = date.slice(6, 8);
+    return day + '/' + month + '/' + year
+}
+
+export function chooseWeatherPic(weather) {
+    let picture = './images/weather/' + weather + '.png';
+    console.log(picture)
+    return picture
+}
+
 export function animate(image, animation, sound) {
     let padlock = document.getElementById(image);
     padlock.classList.add(animation);

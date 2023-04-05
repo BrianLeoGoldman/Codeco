@@ -1,5 +1,5 @@
 .user-main {
-    background-color: nth($colors, 1);
+    background-color: nth($colors, 5);
     .user-section {
         @include flex(flex, column, center, center);
         padding-top: 20px;
@@ -16,6 +16,7 @@
             }
         }
         .user-panel {
+            background-color: nth($colors, 1); 
             @extend %centered;
             padding: 15px;
             box-shadow: 0 5px 5px grey;
