@@ -17,6 +17,7 @@
                 margin-right: 30px;
                 margin-top: 15px;
                 .textarea {
+                    resize: none;
                     width: 300px;
                     height: 250px;
                     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -36,10 +37,17 @@
                     }
                 }
                 
-                .code-button {
+                .encode-button {
                     margin: 20px;
                     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                    background-color: blueviolet;
+                    background-color: rgb(49, 117, 18);
+                    border: none;
+                    box-shadow: 0 5px 5px grey;
+                }
+                .decode-button {
+                    margin: 20px;
+                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    background-color: rgb(169, 14, 14);
                     border: none;
                     box-shadow: 0 5px 5px grey;
                 }

@@ -12,6 +12,18 @@ const positionShiftDictionary = {
 
 /* FUNCTIONS */
 
+export function animate(image, animation, sound) {
+    let padlock = document.getElementById(image);
+    padlock.classList.add(animation);
+    sound.play();
+    setTimeout(() => {
+        sound.play();
+    }, 500);
+    setTimeout(() => {
+        padlock.classList.remove(animation);
+    }, 1500);
+}
+
 export function process(operation, method, messageList) {
     let newMessage;
     if(operation === "encode" || operation === "decode") {

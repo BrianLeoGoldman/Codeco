@@ -111,6 +111,7 @@ header {
         margin-right: 30px;
         margin-top: 15px; }
         .encode-main .encode-panel .encoding-panel .input-group .textarea {
+          resize: none;
           width: 300px;
           height: 250px;
           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
@@ -130,10 +131,16 @@ header {
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .encode-main .encode-panel .encoding-panel .medium-panel .dropdown .method-select {
             border-radius: 3px; }
-        .encode-main .encode-panel .encoding-panel .medium-panel .code-button {
+        .encode-main .encode-panel .encoding-panel .medium-panel .encode-button {
           margin: 20px;
           font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-          background-color: blueviolet;
+          background-color: #317512;
+          border: none;
+          box-shadow: 0 5px 5px grey; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .decode-button {
+          margin: 20px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          background-color: #a90e0e;
           border: none;
           box-shadow: 0 5px 5px grey; }
         .encode-main .encode-panel .encoding-panel .medium-panel .padlock {

@@ -1,19 +1,8 @@
-import { process } from './functions.js';
+import { process, animate } from './functions.js';
 import { addUserData } from './storage.js';
 
-function animate(image, animation, sound) {
-    let padlock = document.getElementById(image);
-    padlock.classList.add(animation);
-    sound.play();
-    setTimeout(() => {
-        sound.play();
-    }, 500);
-    setTimeout(() => {
-        padlock.classList.remove(animation);
-    }, 1500);
-}
-
-let beat = new Audio('../sounds/padlock.wav');
+let padlockBeat = new Audio('../sounds/padlock.wav');
+let failureBeat = new Audio('../sounds/failed-operation.wav');
 let encode = document.getElementById("encode");
 
 encode.addEventListener("click", () => {
@@ -28,10 +17,11 @@ encode.addEventListener("click", () => {
         else {
             result.innerHTML = `${encodedMessage}`;
             addUserData("encode", method, message, encodedMessage);
-            animate("padlock", "rotation", beat);
+            animate("padlock", "rotation", padlockBeat);
         }
     }
     catch(error) {
+        failureBeat.play();
         Swal.fire({
             title: `Encoding failed`, 
             text: `${error}`, 

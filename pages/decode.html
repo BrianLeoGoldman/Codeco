@@ -38,34 +38,38 @@
     <main class="encode-main">
         <section class="encode-panel">
             <div id="encode-text" class="encode-text">
-                To decode a message, please choose a decoding method, then enter the message and press "Decode"
-            </div>
-            <div class="dropdown">
-                <label class="method-label" for="method">Method:</label>
-                <select id="method" class="method-select">
-                    <option value="none">None</option>
-                    <option value="vocals">Vocals</option>
-                    <option value="position">Position</option>
-                    <option value="reversion">Reversion</option>
-                </select>
+                <p>TO DECODE A MESSAGE, PLEASE CHOOSE A DECODING METHOD, THEN ENTER THE MESSAGE AND PRESS "DECODE"</p>
             </div>
 
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Message <br>to decode</span>
+            <div class="encoding-panel">
+
+                <div class="form-group input-group">
+                    <label for="message">Message to decode</label>
+                    <textarea class="textarea" id="message" placeholder="Some text to decode..."></textarea>
                 </div>
-                <textarea class="form-control" aria-label="With textarea" id="message"></textarea>
-            </div>
 
-            <button type="button" class="btn btn-danger code-button" id="decode">Decode</button>
+                <div class="medium-panel">
+                    <div class="dropdown">
+                        <label class="method-label" for="method">METHOD</label>
+                        <select id="method" class="method-select">
+                            <option value="none">None</option>
+                            <option value="vocals">Vocals</option>
+                            <option value="position">Position</option>
+                            <option value="reversion">Reversion</option>
+                        </select>
+                    </div>
 
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Message <br>decoded</span>
+                    <button type="button" class="btn btn-primary decode-button" id="decode">Decode</button>
+
+                    <img id="padlock" class="padlock" src="../images/padlock-open.png" alt="Padlock open">
                 </div>
-                <textarea disabled class="form-control" aria-label="With textarea" id="result"></textarea>
-            </div>
 
+                <div class="form-group input-group">
+                    <label for="result">Message decoded</label>
+                    <textarea disabled class="textarea" id="result" placeholder="Decoded text..."></textarea>
+                </div>
+
+            </div>
 
         </section>
     </main>

@@ -1,5 +1,10 @@
 import { save, get } from './storage.js';
 
+const validateEmail = (email) => {
+    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    return regex.test(email);
+};
+
 function createUser(firstname, lastname, email) {
     let user = {
         firstname: firstname,
@@ -16,13 +21,12 @@ let successBeat = new Audio('../sounds/login.wav');
 let failureBeat = new Audio('../sounds/failed-login.wav');
 let register = document.getElementById("register");
 
-// TODO: check that firstname and lastanem is not empty
 register.addEventListener("click", () => {
     let firstname = document.getElementById("firstname");
     let lastname = document.getElementById("lastname");
     let email = document.getElementById("email");
 
-    if (firstname.value === "" || lastname.value === "" || email.value === "") {
+    if (firstname.value === "" || lastname.value === "" || email.value === "" || !validateEmail(email.value)) {
         failureBeat.play();
         Swal.fire({
             title: `Register failed`, 
@@ -65,33 +69,3 @@ register.addEventListener("click", () => {
         }
     }
 });
-
-/* const getLanguages = async () => {
-    const options = {
-        method: 'GET',
-    };
-    fetch('https://libretranslate.com/languages', options)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-}
-
-const translate = async (text) => {
-    const res = await fetch("https://libretranslate.com/translate", {
-	method: "POST",
-	body: JSON.stringify({
-		q: "",
-		source: "auto",
-		target: "en",
-		format: "text",
-		api_key: ""
-	}),
-	headers: { "Content-Type": "application/json" }
-});
-
-console.log(await res.json());
-}
-
-
-getLanguages()
-translate() */
