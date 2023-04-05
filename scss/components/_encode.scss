@@ -2,58 +2,74 @@
     background-color: nth($colors, 5);
     .encode-panel {
         @include flex(flex, column, center, center);
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         .encode-text p {
+            @extend %title;
             text-align: center;
-            font-size: 1rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 2rem;
+            font-family: 'Anonymous Pro', monospace;
         }
         .encoding-panel {
             @include flex(flex, row, center, center);
             .input-group {
                 @include flex(flex, column, center, center);
-                margin-left: 30px;
-                margin-right: 30px;
-                margin-top: 15px;
+                margin-left: 60px;
+                margin-right: 60px;
+                margin-top: 30px;
                 .textarea {
+                    font-size: 2rem;
                     resize: none;
-                    width: 300px;
-                    height: 250px;
-                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    width: 600px;
+                    height: 500px;
+                    font-family: 'Anonymous Pro', monospace;
+                }
+                .label {
+                    font-family: 'Anonymous Pro', monospace;
+                    font-size: 2rem;
                 }
             }
             .medium-panel {
                 @include flex(flex, column, center, center);
                 .dropdown {
                     @include flex(flex, column, center, center);
-                    padding: 20px;
+                    padding: 40px;
                     .method-label {
-                        margin-right: 10px;
-                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        font-size: 1.5rem;
+                        margin-right: 20px;
+                        font-family: 'Anonymous Pro', monospace;
                     }
                     .method-select {
-                        border-radius: 3px;
+                        font-family: 'Anonymous Pro', monospace;
+                        width: 170px;
+                        font-size: 1.5rem;
+                        border-radius: 6px;
                     }
                 }
                 
                 .encode-button {
-                    margin: 20px;
-                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    width: 150px;
+                    height: 50px;
+                    font-size: 1.7rem;
+                    margin: 40px;
+                    font-family: 'Anonymous Pro', monospace;
                     background-color: rgb(49, 117, 18);
                     border: none;
-                    box-shadow: 0 5px 5px grey;
+                    box-shadow: 0 10px 10px grey;
                 }
                 .decode-button {
-                    margin: 20px;
-                    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                    width: 150px;
+                    height: 50px;
+                    font-size: 1.7rem;
+                    margin: 40px;
+                    font-family: 'Anonymous Pro', monospace;
                     background-color: rgb(169, 14, 14);
                     border: none;
-                    box-shadow: 0 5px 5px grey;
+                    box-shadow: 0 10px 10px grey;
                 }
                 .padlock {
-                    height: 75px;
-                    width: 60px;
+                    height: 150px;
+                    width: 120px;
                 }
                 .rotation {
                     animation-name: rotateY;

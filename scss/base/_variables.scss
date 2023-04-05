@@ -18,14 +18,14 @@ rgb(160, 157, 208);
 
 %title {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     color: nth($colors, 2);
 }
 
 %border {
     border-style: ridge;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 %centered {
@@ -42,9 +42,18 @@ rgb(160, 157, 208);
 
 // ANIMATIONS //
 
-@keyframes change-color {
-    from {background-color: red;}
-    to {background-color: yellow;}
+@keyframes blink {
+    0% {opacity: 0}
+    10% {opacity: 1}
+    20% {opacity: 0}
+    30% {opacity: 1}
+    40% {opacity: 0}
+    50% {opacity: 1}
+	60%{opacity: 0}
+	70% {opacity: 1}
+    80% {opacity: 0}
+    90% {opacity: 1}
+    100% {opacity: 0}
 }
 
 @keyframes rotateY {
@@ -53,11 +62,6 @@ rgb(160, 157, 208);
 }
 
 @keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-@keyframes blink {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }

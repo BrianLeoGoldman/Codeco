@@ -2,71 +2,51 @@
     background-color: nth($colors, 5);
     .main-panel {
         @include flex(flex, column, center, center);
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         .welcome-text {
-            margin: 15px;
+            margin: 60px;
             @extend %centered;
-            .text1 {
-                @extend %title;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-            .text2 {
-                text-align: center;
-                font-size: 1.1rem;
-                margin-top: 12px;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
+        }
+        .text {
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Anonymous Pro', monospace;
+            margin-top: 20px;
         }
         .user-info {
-            width: 400px;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom: 20px;
+            width: 80vh;
+            margin: 50px;
+            .input-group-prepend {
+                .input-group-text {
+                    font-family: 'Anonymous Pro', monospace;
+                    font-size: 1.5rem;
+                    height: 7vh;
+                }
+            }
+            .form-control {
+                font-family: 'Anonymous Pro', monospace;
+                font-size: 1.5rem;
+                height: 7vh;
+            }
         }
         .register {
-            margin: 20px;
+            width: 150px;
+            height: 50px;
+            font-size: 1.5rem;
+            margin: 40px;
             background-color: blueviolet;
             border: none;
-            box-shadow: 0 5px 5px grey;
+            box-shadow: 0 10px 10px grey;
         }
         .register-success {
             @extend %centered;
             h4 {
-                font-size: 0.9rem;
+                font-size: 1.9rem;
                 text-align: center;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-family: 'Anonymous Pro', monospace;
             }
         }
-    }
-    .news-panel {
-        .carousel {
-            .carousel-inner {
-                .carousel-item {
-                    .card {
-                        height: 100px;
-                        /* background: rgb(22,45,4);
-                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
-                        background: rgb(46,32,79);
-                        background: linear-gradient(90deg, rgba(46,32,79,1) 5%, rgba(104,8,125,1) 30%, rgba(46,32,79,1) 65%);
-                        .card-body {
-                            .card-title {
-                                text-align: center;
-                                font-size: 1rem;
-                                color: azure;
-                            }
-                            .card-text {
-                                font-size: 0.7rem;
-                                color: blanchedalmond;
-                                text-align: center;
-                                /* text-align: justify; */
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
     }
 }
 

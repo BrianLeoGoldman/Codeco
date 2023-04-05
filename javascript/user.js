@@ -63,7 +63,7 @@ messageInfo.className = "message-info";
 if(currentUser === null) {
     userInfo.innerHTML = `
     <h4 class="information">There is no registered user</h4>
-    <h4 class="information">Please go to Register page to register your data</h4>
+    <h4 class="information">Please go to <a href="../pages/register.html">Register</a> page to register your data</h4>
     `
     userPanel.innerText = "";
     userPanel.append(userInfo);

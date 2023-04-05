@@ -1,5 +1,11 @@
-# Deco
+# Codeco
 
-Proyecto para el curso de Javascript de CoderHouse
+## Proyecto final para curso de JavaScript de CoderHouse
 
-Alumno: Brian Leonel Goldman
+### Alumno: Brian Leonel Goldman
+### Email: leonel89011@gmail.com
+### Usuario GitHub: BrianLeoGoldman
+
+### Link repositorio: https://github.com/BrianLeoGoldman/CoDeCo
+### Link GitHub Pages: 
+### Link Netlify: 
