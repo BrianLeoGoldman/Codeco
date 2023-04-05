@@ -4,32 +4,44 @@
         @include flex(flex, column, center, center);
         @extend %centered;
         .sequence-text {
-            text-align: center;
-            font-size: 1rem;
-            @extend %centered;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            @extend %title;
+            font-size: 2rem;
+            font-family: 'Anonymous Pro', monospace;
+            margin-top: 25px;
+            margin-bottom: 25px;
         }
         .cards {
             .card {
                 width: 120vh;
-                padding: 10px;
-                margin-top: 10px;
-                padding: 10px;
+                padding: 20px;
+                margin-top: 20px;
+                padding: 20px;
                 @extend %centered;
                 .input-group {
-                    padding: 10px;
+                    padding: 20px;
+                    .textarea {
+                        font-size: 1.5rem;
+                        width: 70vh;
+                        height: 20vh;
+                    }
+                    .input-group-prepend {
+                        .input-group-text {
+                            font-family: 'Anonymous Pro', monospace;
+                            font-size: 1.5rem;
+                        }
+                    }
                 }
                 .dropdowns {
                     @include flex(flex, row, center, center);
                     .dropdown {
-                        padding: 10px;
-                        .operation-label {
-                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        padding: 20px;
+                        .label {
+                            font-size: 1.5rem;
+                            font-family: 'Anonymous Pro', monospace;
                         }
-                        .method-label {
-                            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        .select {
+                            font-size: 1.5rem;
+                            font-family: 'Anonymous Pro', monospace;
                         }
                     }
                 }
@@ -38,16 +50,26 @@
         .buttons {
             @include flex(flex, row, center, center);
             .sequence-button-add {
-                margin: 15px;
+                font-family: 'Anonymous Pro', monospace;
+                width: 250px;
+                height: 50px;
+                font-size: 1.7rem;
+                margin: 30px;
+                margin-bottom: 70px;
                 background-color: blueviolet;
                 border: none;
-                box-shadow: 0 5px 5px grey;
+                box-shadow: 0 10px 10px grey;
             }
             .sequence-button-execute {
-                margin: 15px;
+                font-family: 'Anonymous Pro', monospace;
+                width: 150px;
+                height: 50px;
+                font-size: 1.7rem;
+                margin: 30px;
+                margin-bottom: 70px;
                 background-color: rgb(68, 68, 174);
                 border: none;
-                box-shadow: 0 5px 5px grey;
+                box-shadow: 0 10px 10px grey;
             }
         }
     }

@@ -2,41 +2,39 @@
     background-color: nth($colors, 5);
     .main-panel {
         @include flex(flex, column, center, center);
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
         .welcome-text {
-            margin: 15px;
+            margin: 30px;
             @extend %centered;
-            .text1 {
+            .text {
                 @extend %title;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            }
-            .text2 {
                 text-align: center;
-                font-size: 1.1rem;
-                margin-top: 12px;
-                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-size: 2.7rem;
+                font-family: 'Anonymous Pro', monospace;
             }
         }
     }
     .news-panel {
         .carousel {
-            margin-bottom: 30px;
+            margin-bottom: 60px;
             .carousel-inner {
                 .carousel-item {
-                    height: 100px;
-                    padding-top: 10px;
-                    padding-left: 25px;
-                    padding-right: 25px;
+                    height: 200px;
+                    padding-top: 20px;
+                    padding-left: 45px;
+                    padding-right: 45px;
                     background: rgb(32,39,79);
                     background: linear-gradient(90deg, rgba(32,39,79,1) 5%, rgba(32,79,67,1) 30%, rgba(32,39,79,1) 65%);
                     .title {
+                        font-family: 'Anonymous Pro', monospace;
                         text-align: center;
-                        font-size: 1rem;
+                        font-size: 2rem;
                         color: azure;
                     }
                     .text {
-                        font-size: 0.7rem;
+                        font-family: 'Anonymous Pro', monospace;
+                        font-size: 1.5rem;
                         color: blanchedalmond;
                         text-align: center;
                     }
@@ -45,14 +43,14 @@
         }
     }
     .weather-panel {
-        height: 170px;
+        height: 350px;
         .weather {
             @include flex(flex, row, center, center);
-            height: 120px;
+            height: 300px;
             align-items: center;
             .loading {
-                height: 75px;
-                width: 75px;
+                height: 175px;
+                width: 175px;
                 animation-name: rotate;
                 animation-duration: 1.5s;
             }
@@ -64,26 +62,28 @@
                 background: linear-gradient(90deg, rgb(32, 33, 79) 5%, rgb(8, 66, 125) 30%, rgb(32, 79, 67) 65%);
                 @include flex(flex, column, center, center);
                 @extend %border;
-                border-radius: 5px;
-                padding: 5px;
-                margin: 5px;
-                margin-top: 20px;
+                border-radius: 15px;
+                padding: 15px;
+                margin: 15px;
+                margin-top: 40px;
                 .title {
+                    font-family: 'Anonymous Pro', monospace;
                     text-align: center;
-                    font-size: 1.2rem;
+                    font-size: 2rem;
                     color: azure;
                 }
                 .weather-icon {
-                    height: 50px;
-                    width: 50px;
+                    height: 100px;
+                    width: 100px;
                     &:hover {
-                        animation-name: rotate;
-                        animation-duration: 1.5s;
+                        animation-name: blink;
+                        animation-duration: 1s;
                     }
                 }
                 .text {
+                    font-family: 'Anonymous Pro', monospace;
                     text-align: center;
-                    font-size: 0.9rem;
+                    font-size: 1.5rem;
                     color: rgb(123, 214, 214);
                 }
             }

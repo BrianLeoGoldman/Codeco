@@ -9,17 +9,17 @@
   padding: 0;
   box-sizing: border-box; }
 
-.index-main .main-panel .welcome-text .text1, .register-main .main-panel .welcome-text .text1, .user-main .message-section .section-title .title {
+.index-main .main-panel .welcome-text .text, .encode-main .encode-panel .encode-text p, .sequence-main .sequence-panel .sequence-text, .user-main .user-section .section-title .title, .user-main .message-section .section-title .title {
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 2.3rem;
   color: black; }
 
 .index-main .weather-panel .weather .forecast {
   border-style: ridge;
-  padding-left: 5px;
-  padding-right: 5px; }
+  padding-left: 10px;
+  padding-right: 10px; }
 
-.index-main .main-panel .welcome-text, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card, .register-main .main-panel .welcome-text, .register-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .section-title .title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info {
+.index-main .main-panel .welcome-text, .sequence-main .sequence-panel, .sequence-main .sequence-panel .cards .card, .register-main .main-panel .welcome-text, .register-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info {
   align-items: center;
   align-content: center; }
 
@@ -27,11 +27,29 @@ header nav .nav .nav-item .nav-link:hover {
   color: gold;
   transition: all .3s; }
 
-@keyframes change-color {
-  from {
-    background-color: red; }
-  to {
-    background-color: yellow; } }
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 1; }
+  20% {
+    opacity: 0; }
+  30% {
+    opacity: 1; }
+  40% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  60% {
+    opacity: 0; }
+  70% {
+    opacity: 1; }
+  80% {
+    opacity: 0; }
+  90% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 @keyframes rotateY {
   from {
@@ -45,24 +63,18 @@ header nav .nav .nav-item .nav-link:hover {
   to {
     transform: rotate(360deg); } }
 
-@keyframes blink {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
 header {
   /* background-color: nth($colors, 1); */
   background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210828/pngtree-digital-code-encryption-dark-blue-technology-background-image_770047.jpg"); }
   header h1 {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 70px;
+    font-size: 7rem;
     color: whitesmoke; }
   header nav .nav .nav-item .nav-link {
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 2.5rem;
     color: whitesmoke; }
 
 .index-main {
@@ -72,46 +84,45 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 40px;
+    padding-bottom: 40px; }
     .index-main .main-panel .welcome-text {
-      margin: 15px; }
-      .index-main .main-panel .welcome-text .text1 {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-      .index-main .main-panel .welcome-text .text2 {
+      margin: 30px; }
+      .index-main .main-panel .welcome-text .text {
         text-align: center;
-        font-size: 1.1rem;
-        margin-top: 12px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        font-size: 2.7rem;
+        font-family: 'Anonymous Pro', monospace; }
   .index-main .news-panel .carousel {
-    margin-bottom: 30px; }
+    margin-bottom: 60px; }
     .index-main .news-panel .carousel .carousel-inner .carousel-item {
-      height: 100px;
-      padding-top: 10px;
-      padding-left: 25px;
-      padding-right: 25px;
+      height: 200px;
+      padding-top: 20px;
+      padding-left: 45px;
+      padding-right: 45px;
       background: #20274f;
       background: linear-gradient(90deg, #20274f 5%, #204f43 30%, #20274f 65%); }
       .index-main .news-panel .carousel .carousel-inner .carousel-item .title {
+        font-family: 'Anonymous Pro', monospace;
         text-align: center;
-        font-size: 1rem;
+        font-size: 2rem;
         color: azure; }
       .index-main .news-panel .carousel .carousel-inner .carousel-item .text {
-        font-size: 0.7rem;
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 1.5rem;
         color: blanchedalmond;
         text-align: center; }
   .index-main .weather-panel {
-    height: 170px; }
+    height: 350px; }
     .index-main .weather-panel .weather {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      height: 120px;
+      height: 300px;
       align-items: center; }
       .index-main .weather-panel .weather .loading {
-        height: 75px;
-        width: 75px;
+        height: 175px;
+        width: 175px;
         animation-name: rotate;
         animation-duration: 1.5s; }
       .index-main .weather-panel .weather .invisible {
@@ -123,23 +134,25 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
-        padding: 5px;
-        margin: 5px;
-        margin-top: 20px; }
+        border-radius: 15px;
+        padding: 15px;
+        margin: 15px;
+        margin-top: 40px; }
         .index-main .weather-panel .weather .forecast .title {
+          font-family: 'Anonymous Pro', monospace;
           text-align: center;
-          font-size: 1.2rem;
+          font-size: 2rem;
           color: azure; }
         .index-main .weather-panel .weather .forecast .weather-icon {
-          height: 50px;
-          width: 50px; }
+          height: 100px;
+          width: 100px; }
           .index-main .weather-panel .weather .forecast .weather-icon:hover {
-            animation-name: rotate;
-            animation-duration: 1.5s; }
+            animation-name: blink;
+            animation-duration: 1s; }
         .index-main .weather-panel .weather .forecast .text {
+          font-family: 'Anonymous Pro', monospace;
           text-align: center;
-          font-size: 0.9rem;
+          font-size: 1.5rem;
           color: #7bd6d6; }
 
 .encode-main {
@@ -149,12 +162,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 40px;
+    padding-bottom: 40px; }
     .encode-main .encode-panel .encode-text p {
       text-align: center;
-      font-size: 1rem;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      font-size: 2rem;
+      font-family: 'Anonymous Pro', monospace; }
     .encode-main .encode-panel .encoding-panel {
       display: flex;
       flex-direction: row;
@@ -165,14 +178,18 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 30px;
-        margin-right: 30px;
-        margin-top: 15px; }
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 30px; }
         .encode-main .encode-panel .encoding-panel .input-group .textarea {
+          font-size: 2rem;
           resize: none;
-          width: 300px;
-          height: 250px;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          width: 600px;
+          height: 500px;
+          font-family: 'Anonymous Pro', monospace; }
+        .encode-main .encode-panel .encoding-panel .input-group .label {
+          font-family: 'Anonymous Pro', monospace;
+          font-size: 2rem; }
       .encode-main .encode-panel .encoding-panel .medium-panel {
         display: flex;
         flex-direction: column;
@@ -183,27 +200,37 @@ header {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          padding: 20px; }
+          padding: 40px; }
           .encode-main .encode-panel .encoding-panel .medium-panel .dropdown .method-label {
-            margin-right: 10px;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+            font-size: 1.5rem;
+            margin-right: 20px;
+            font-family: 'Anonymous Pro', monospace; }
           .encode-main .encode-panel .encoding-panel .medium-panel .dropdown .method-select {
-            border-radius: 3px; }
+            font-family: 'Anonymous Pro', monospace;
+            width: 170px;
+            font-size: 1.5rem;
+            border-radius: 6px; }
         .encode-main .encode-panel .encoding-panel .medium-panel .encode-button {
-          margin: 20px;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          width: 150px;
+          height: 50px;
+          font-size: 1.7rem;
+          margin: 40px;
+          font-family: 'Anonymous Pro', monospace;
           background-color: #317512;
           border: none;
-          box-shadow: 0 5px 5px grey; }
+          box-shadow: 0 10px 10px grey; }
         .encode-main .encode-panel .encoding-panel .medium-panel .decode-button {
-          margin: 20px;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          width: 150px;
+          height: 50px;
+          font-size: 1.7rem;
+          margin: 40px;
+          font-family: 'Anonymous Pro', monospace;
           background-color: #a90e0e;
           border: none;
-          box-shadow: 0 5px 5px grey; }
+          box-shadow: 0 10px 10px grey; }
         .encode-main .encode-panel .encoding-panel .medium-panel .padlock {
-          height: 75px;
-          width: 60px; }
+          height: 150px;
+          width: 120px; }
         .encode-main .encode-panel .encoding-panel .medium-panel .rotation {
           animation-name: rotateY;
           animation-duration: 1.5s; }
@@ -216,44 +243,62 @@ header {
     justify-content: center;
     align-items: center; }
     .sequence-main .sequence-panel .sequence-text {
-      text-align: center;
-      font-size: 1rem;
-      margin-top: 15px;
-      margin-bottom: 15px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      font-size: 2rem;
+      font-family: 'Anonymous Pro', monospace;
+      margin-top: 25px;
+      margin-bottom: 25px; }
     .sequence-main .sequence-panel .cards .card {
       width: 120vh;
-      padding: 10px;
-      margin-top: 10px;
-      padding: 10px; }
+      padding: 20px;
+      margin-top: 20px;
+      padding: 20px; }
       .sequence-main .sequence-panel .cards .card .input-group {
-        padding: 10px; }
+        padding: 20px; }
+        .sequence-main .sequence-panel .cards .card .input-group .textarea {
+          font-size: 1.5rem;
+          width: 70vh;
+          height: 20vh; }
+        .sequence-main .sequence-panel .cards .card .input-group .input-group-prepend .input-group-text {
+          font-family: 'Anonymous Pro', monospace;
+          font-size: 1.5rem; }
       .sequence-main .sequence-panel .cards .card .dropdowns {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center; }
         .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
-          padding: 10px; }
-          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .operation-label {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .method-label {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          padding: 20px; }
+          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .label {
+            font-size: 1.5rem;
+            font-family: 'Anonymous Pro', monospace; }
+          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .select {
+            font-size: 1.5rem;
+            font-family: 'Anonymous Pro', monospace; }
     .sequence-main .sequence-panel .buttons {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center; }
       .sequence-main .sequence-panel .buttons .sequence-button-add {
-        margin: 15px;
+        font-family: 'Anonymous Pro', monospace;
+        width: 250px;
+        height: 50px;
+        font-size: 1.7rem;
+        margin: 30px;
+        margin-bottom: 70px;
         background-color: blueviolet;
         border: none;
-        box-shadow: 0 5px 5px grey; }
+        box-shadow: 0 10px 10px grey; }
       .sequence-main .sequence-panel .buttons .sequence-button-execute {
-        margin: 15px;
+        font-family: 'Anonymous Pro', monospace;
+        width: 150px;
+        height: 50px;
+        font-size: 1.7rem;
+        margin: 30px;
+        margin-bottom: 70px;
         background-color: #4444ae;
         border: none;
-        box-shadow: 0 5px 5px grey; }
+        box-shadow: 0 10px 10px grey; }
 
 .register-main {
   background-color: #a09dd0; }
@@ -262,46 +307,38 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 40px;
+    padding-bottom: 40px; }
     .register-main .main-panel .welcome-text {
-      margin: 15px; }
-      .register-main .main-panel .welcome-text .text1 {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-      .register-main .main-panel .welcome-text .text2 {
-        text-align: center;
-        font-size: 1.1rem;
-        margin-top: 12px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      margin: 60px; }
+    .register-main .main-panel .text {
+      text-align: center;
+      font-size: 2rem;
+      font-family: 'Anonymous Pro', monospace;
+      margin-top: 20px; }
     .register-main .main-panel .user-info {
-      width: 400px;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px; }
+      width: 80vh;
+      margin: 50px; }
+      .register-main .main-panel .user-info .input-group-prepend .input-group-text {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 1.5rem;
+        height: 7vh; }
+      .register-main .main-panel .user-info .form-control {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 1.5rem;
+        height: 7vh; }
     .register-main .main-panel .register {
-      margin: 20px;
+      width: 150px;
+      height: 50px;
+      font-size: 1.5rem;
+      margin: 40px;
       background-color: blueviolet;
       border: none;
-      box-shadow: 0 5px 5px grey; }
+      box-shadow: 0 10px 10px grey; }
     .register-main .main-panel .register-success h4 {
-      font-size: 0.9rem;
+      font-size: 1.9rem;
       text-align: center;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-  .register-main .news-panel .carousel .carousel-inner .carousel-item .card {
-    height: 100px;
-    /* background: rgb(22,45,4);
-                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
-    background: #2e204f;
-    background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
-    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
-      text-align: center;
-      font-size: 1rem;
-      color: azure; }
-    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
-      font-size: 0.7rem;
-      color: blanchedalmond;
-      text-align: center;
-      /* text-align: justify; */ }
+      font-family: 'Anonymous Pro', monospace; }
 
 .user-main {
   background-color: #a09dd0; }
@@ -310,77 +347,77 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 40px;
+    padding-bottom: 40px; }
     .user-main .user-section .section-title {
-      margin: 10px; }
+      margin: 20px; }
       .user-main .user-section .section-title .title {
-        text-align: center;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        font-size: 2rem;
+        font-family: 'Anonymous Pro', monospace; }
     .user-main .user-section .user-panel {
+      text-align: center;
       background-color: whitesmoke;
-      padding: 15px;
-      padding-bottom: 10px;
-      border-radius: 5px;
-      box-shadow: 0 5px 5px grey; }
+      padding: 30px;
+      padding-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 10px 10px grey; }
       .user-main .user-section .user-panel .user-info {
-        margin: 10px; }
+        margin: 20px; }
         .user-main .user-section .user-panel .user-info .user-bio {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          font-size: 0.7rem; }
+          font-size: 2rem; }
           .user-main .user-section .user-panel .user-info .user-bio .user-names {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center; }
             .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
-              font-size: 1rem;
-              margin-left: 15px;
-              margin-right: 15px;
+              font-size: 2rem;
+              margin-left: 30px;
+              margin-right: 30px;
               font-weight: 500;
-              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              font-family: 'Anonymous Pro', monospace;
               color: black; }
           .user-main .user-section .user-panel .user-info .user-bio .user-data {
-            font-size: 1rem;
-            margin-left: 15px;
-            margin-right: 15px;
+            font-size: 2rem;
+            margin-left: 30px;
+            margin-right: 30px;
             font-weight: 500;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: 'Anonymous Pro', monospace;
             color: black; }
           .user-main .user-section .user-panel .user-info .user-bio .user-icon {
-            height: 50px;
-            width: 50px; }
+            height: 100px;
+            width: 100px; }
         .user-main .user-section .user-panel .user-info .information {
-          font-size: 1rem;
-          margin-left: 15px;
-          margin-right: 15px;
+          font-size: 2rem;
+          margin-left: 30px;
+          margin-right: 30px;
           font-weight: 500;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          font-family: 'Anonymous Pro', monospace;
           color: black; }
   .user-main .message-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px; }
+    padding-top: 20px;
+    padding-bottom: 20px; }
     .user-main .message-section .section-title {
-      margin: 10px; }
+      margin: 20px; }
       .user-main .message-section .section-title .title {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        font-size: 2rem;
+        font-family: 'Anonymous Pro', monospace; }
     .user-main .message-section .message-panel .message-info {
-      margin: 10px; }
+      margin: 20px; }
       .user-main .message-section .message-panel .message-info .all-messages {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: start;
-        font-size: 0.7rem;
+        font-size: 2rem;
         color: black;
         width: 100%; }
         .user-main .message-section .message-panel .message-info .all-messages .encoded-messages {
@@ -388,15 +425,15 @@ header {
           flex-direction: column;
           justify-content: center;
           align-items: start;
-          margin-right: 20px;
+          margin-right: 40px;
           width: 40vw;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          font-family: 'Anonymous Pro', monospace; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
             align-self: center;
-            font-size: 0.9rem; }
+            font-size: 2rem; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card {
             width: 100%;
-            margin-bottom: 5px; }
+            margin-bottom: 10px; }
             .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card .card-body p {
               width: 100%;
               overflow-wrap: break-word; }
@@ -405,24 +442,24 @@ header {
           flex-direction: column;
           justify-content: center;
           align-items: start;
-          margin-left: 20px;
+          margin-left: 40px;
           width: 40vw;
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          font-family: 'Anonymous Pro', monospace; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
             align-self: center;
-            font-size: 0.9rem; }
+            font-size: 2rem; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card {
             width: 100%;
-            margin-bottom: 5px; }
+            margin-bottom: 10px; }
             .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card .card-body p {
               width: 100%;
               overflow-wrap: break-word; }
       .user-main .message-section .message-panel .message-info .information {
-        font-size: 1rem;
-        margin-left: 15px;
-        margin-right: 15px;
+        font-size: 2rem;
+        margin-left: 30px;
+        margin-right: 30px;
         font-weight: 500;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: 'Anonymous Pro', monospace;
         color: black; }
 
 footer {
@@ -433,8 +470,7 @@ footer {
   background-color: black;
   text-align: center;
   width: 100%;
-  padding-bottom: 1px;
-  font-size: 0.8rem; }
+  padding-bottom: 2px; }
   footer .text {
     width: 50%;
     display: flex;
@@ -443,9 +479,8 @@ footer {
     align-items: center; }
     footer .text .footer-text {
       color: white;
-      font-family: 'Cormorant Unicase', serif;
-      font-size: 0.8rem;
-      font-size: 0.7rem;
+      font-family: 'Anonymous Pro', monospace;
+      font-size: 1.5rem;
       padding-top: 5px; }
   footer .logos {
     width: 50%;
@@ -454,6 +489,6 @@ footer {
     justify-content: space-around;
     align-items: center; }
     footer .logos img {
-      width: 25px;
-      height: 25px;
+      width: 50px;
+      height: 50px;
       margin: 5px; }
