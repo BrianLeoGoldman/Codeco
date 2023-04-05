@@ -16,12 +16,11 @@ export function parseDate(date) {
     let year = date.slice(0, 4);
     let month = date.slice(4, 6);
     let day = date.slice(6, 8);
-    return day + '/' + month + '/' + year
+    return month + '/' + day + '/' + year
 }
 
 export function chooseWeatherPic(weather) {
     let picture = './images/weather/' + weather + '.png';
-    console.log(picture)
     return picture
 }
 
@@ -83,12 +82,7 @@ function transform(message, operation, dictionary) {
         usedDictionary = swapDictionary(dictionary);
     }
     for (let c of message) {
-        if(c in usedDictionary) {
-            transformedMessage = transformedMessage + usedDictionary[c];
-        }
-        else {
-            transformedMessage = transformedMessage + c;
-        }
+        (c in usedDictionary) ? transformedMessage = transformedMessage + usedDictionary[c] :  transformedMessage = transformedMessage + c;
     }
     return transformedMessage;
 } 
