@@ -328,6 +328,7 @@ header {
         font-size: 1.5rem;
         height: 7vh; }
     .register-main .main-panel .register {
+      font-family: 'Anonymous Pro', monospace;
       width: 150px;
       height: 50px;
       font-size: 1.5rem;
