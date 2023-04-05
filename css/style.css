@@ -9,12 +9,12 @@
   padding: 0;
   box-sizing: border-box; }
 
-.index-main .main-panel .welcome-text .text1, .user-main .message-section .section-title .title {
+.index-main .main-panel .welcome-text .text1, .register-main .main-panel .welcome-text .text1, .user-main .message-section .section-title .title {
   text-align: center;
   font-size: 1.3rem;
   color: black; }
 
-.index-main .main-panel .welcome-text, .index-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .section-title .title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card {
+.index-main .main-panel .welcome-text, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card, .register-main .main-panel .welcome-text, .register-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .section-title .title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info {
   align-items: center;
   align-content: center; }
 
@@ -66,35 +66,23 @@ header {
         font-size: 1.1rem;
         margin-top: 12px;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-    .index-main .main-panel .user-info {
-      width: 400px;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px; }
-    .index-main .main-panel .register {
-      margin: 20px;
-      background-color: blueviolet;
-      border: none;
-      box-shadow: 0 5px 5px grey; }
-    .index-main .main-panel .register-success h4 {
-      font-size: 0.9rem;
-      text-align: center;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-  .index-main .news-panel .carousel .carousel-inner .carousel-item .card {
-    height: 100px;
-    /* background: rgb(22,45,4);
+  .index-main .news-panel .carousel {
+    margin-bottom: 30px; }
+    .index-main .news-panel .carousel .carousel-inner .carousel-item .card {
+      height: 125px;
+      /* background: rgb(22,45,4);
                         background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
-    background: #2e204f;
-    background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
-    .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
-      text-align: center;
-      font-size: 1rem;
-      color: azure; }
-    .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
-      font-size: 0.7rem;
-      color: blanchedalmond;
-      text-align: center;
-      /* text-align: justify; */ }
+      background: #2e204f;
+      background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
+      .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
+        text-align: center;
+        font-size: 1rem;
+        color: azure; }
+      .index-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
+        font-size: 0.7rem;
+        color: blanchedalmond;
+        text-align: center;
+        /* text-align: justify; */ }
 
 .encode-main {
   background-color: whitesmoke; }
@@ -151,9 +139,102 @@ header {
         .encode-main .encode-panel .encoding-panel .medium-panel .padlock {
           height: 75px;
           width: 60px; }
-        .encode-main .encode-panel .encoding-panel .medium-panel .animation {
+        .encode-main .encode-panel .encoding-panel .medium-panel .rotation {
           animation-name: rotate;
-          animation-duration: 3s; }
+          animation-duration: 1.5s; }
+
+.sequence-main .sequence-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .sequence-main .sequence-panel .sequence-text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+  .sequence-main .sequence-panel .cards .card {
+    width: 120vh;
+    padding: 10px;
+    margin-top: 10px;
+    padding: 10px; }
+    .sequence-main .sequence-panel .cards .card .input-group {
+      padding: 10px; }
+    .sequence-main .sequence-panel .cards .card .dropdowns {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
+        padding: 10px; }
+        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .operation-label {
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .method-label {
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+  .sequence-main .sequence-panel .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .sequence-main .sequence-panel .buttons .sequence-button-add {
+      margin: 15px;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
+    .sequence-main .sequence-panel .buttons .sequence-button-execute {
+      margin: 15px;
+      background-color: #4444ae;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
+
+.register-main {
+  background-color: whitesmoke; }
+  .register-main .main-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .register-main .main-panel .welcome-text {
+      margin: 15px; }
+      .register-main .main-panel .welcome-text .text1 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      .register-main .main-panel .welcome-text .text2 {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 12px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .register-main .main-panel .user-info {
+      width: 400px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px; }
+    .register-main .main-panel .register {
+      margin: 20px;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
+    .register-main .main-panel .register-success h4 {
+      font-size: 0.9rem;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+  .register-main .news-panel .carousel .carousel-inner .carousel-item .card {
+    height: 100px;
+    /* background: rgb(22,45,4);
+                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
+    background: #2e204f;
+    background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
+    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
+      text-align: center;
+      font-size: 1rem;
+      color: azure; }
+    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
+      font-size: 0.7rem;
+      color: blanchedalmond;
+      text-align: center;
+      /* text-align: justify; */ }
 
 .user-main {
   background-color: whitesmoke; }
@@ -270,51 +351,6 @@ header {
         font-weight: 500;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         color: black; }
-
-.sequence-main .sequence-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
-  .sequence-main .sequence-panel .sequence-text {
-    text-align: center;
-    font-size: 1rem;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-  .sequence-main .sequence-panel .cards .card {
-    width: 120vh;
-    padding: 10px;
-    margin-top: 10px;
-    padding: 10px; }
-    .sequence-main .sequence-panel .cards .card .input-group {
-      padding: 10px; }
-    .sequence-main .sequence-panel .cards .card .dropdowns {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center; }
-      .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
-        padding: 10px; }
-        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .operation-label {
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .method-label {
-          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
-  .sequence-main .sequence-panel .buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
-    .sequence-main .sequence-panel .buttons .sequence-button-add {
-      margin: 15px;
-      background-color: blueviolet;
-      border: none;
-      box-shadow: 0 5px 5px grey; }
-    .sequence-main .sequence-panel .buttons .sequence-button-execute {
-      margin: 15px;
-      background-color: #4444ae;
-      border: none;
-      box-shadow: 0 5px 5px grey; }
 
 footer {
   display: flex;

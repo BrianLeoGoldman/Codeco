@@ -1,6 +1,19 @@
 import { process } from './functions.js';
 import { addUserData } from './storage.js';
 
+function animate(image, animation, sound) {
+    let padlock = document.getElementById(image);
+    padlock.classList.add(animation);
+    sound.play();
+    setTimeout(() => {
+        sound.play();
+    }, 500);
+    setTimeout(() => {
+        padlock.classList.remove(animation);
+    }, 1500);
+}
+
+let beat = new Audio('../sounds/padlock.wav');
 let encode = document.getElementById("encode");
 
 encode.addEventListener("click", () => {
@@ -13,14 +26,9 @@ encode.addEventListener("click", () => {
             result.innerHTML = ``;
         }
         else {
-            let padlock = document.getElementById("padlock");
-            padlock.classList.add("animation");
             result.innerHTML = `${encodedMessage}`;
             addUserData("encode", method, message, encodedMessage);
-            setTimeout(() => {
-                padlock.classList.remove("animation");
-            }, 3000);
-            
+            animate("padlock", "rotation", beat);
         }
     }
     catch(error) {
