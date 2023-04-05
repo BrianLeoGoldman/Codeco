@@ -2,7 +2,8 @@ $colors:
 whitesmoke,
 black,
 gold,
-green;
+green,
+rgb(160, 157, 208);
 
 // MIXIN //
 
@@ -17,7 +18,7 @@ green;
 
 %title {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: nth($colors, 2);
 }
 
@@ -37,4 +38,21 @@ green;
         color: nth($colors, 3);
         transition: all .3s;
     }
+}
+
+// ANIMATIONS //
+
+@keyframes change-color {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+
+@keyframes rotateY {
+    from {transform:rotateY(0deg);}
+    to {transform:rotateY(360deg);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
 }

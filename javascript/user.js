@@ -4,10 +4,12 @@ function fillUserPanel(user, userInfo) {
     userInfo.innerHTML = `
     <div class="user-bio">
         <div class="user-names">
-            <h4>Firstname: ${user.firstname}</h4>
-            <h4>Lastname: ${user.lastname}</h4>
+            <h4 class="user-data">FIRSTNAME: ${user.firstname}</h4>
+            <h4 class="user-data">LASTNAME: ${user.lastname}</h4>
         </div>
-        <h4 class="date">Registered: ${user.register}</h4>
+        <h4 class="user-data">EMAIL: ${user.email}</h4>
+        <h4 class="user-data">REGISTERED: ${user.register}</h4>
+        <img class="user-icon" src='../images/user.png' alt="User icon">
     </div>
     `
     return userInfo
@@ -18,7 +20,7 @@ function fillMessagePanel(user, messageInfo) {
     htmlString = htmlString + `
     <div class="all-messages">
         <div class="encoded-messages">
-            <h4>Encoded messages</h4>
+            <h4>ENCODED MESSAGES</h4>
     `;
     user.encodedMessages.forEach(item => {
         htmlString = htmlString + `<div class="card"><div class="card-body">`;
@@ -31,7 +33,7 @@ function fillMessagePanel(user, messageInfo) {
     htmlString = htmlString + `
         </div>
         <div class="decoded-messages">
-            <h4>Decoded messages</h4>
+            <h4>DECODED MESSAGES</h4>
     `;
     user.decodedMessages.forEach(item => {
         htmlString = htmlString + `<div class="card"><div class="card-body">`;

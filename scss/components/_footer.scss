@@ -1,0 +1,28 @@
+footer {
+    @include flex(flex, column, center, center);
+    background-color: black;
+    text-align: center;
+    width: 100%;     
+    padding-bottom: 1px;
+    font-size: 0.8rem;
+    .text {
+        width: 50%;
+        @include flex(flex, row, space-around, center);
+        .footer-text {
+            color: white;
+            font-family: 'Cormorant Unicase', serif;
+            font-size: 0.8rem;
+            font-size: 0.7rem;
+            padding-top: 5px; 
+        }
+    }
+    .logos {
+        width: 50%;
+        @include flex(flex, row, space-around, center);
+        img {
+            width: 25px;
+            height: 25px;
+            margin: 5px;
+        }
+    }
+}

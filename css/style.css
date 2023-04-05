@@ -9,23 +9,41 @@
   padding: 0;
   box-sizing: border-box; }
 
-.index-main .main-panel .welcome-text .text1, .index-main .main-panel .welcome-text .text2, .encode-main .encode-panel .encode-text, .user-main .user-section .section-title .title, .user-main .message-section .section-title .title, .sequence-main .sequence-panel .sequence-text {
+.index-main .main-panel .welcome-text .text1, .register-main .main-panel .welcome-text .text1, .user-main .message-section .section-title .title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: black; }
 
-.user-main .user-section .user-panel {
+.index-main .weather-panel .weather .forecast {
   border-style: ridge;
   padding-left: 5px;
   padding-right: 5px; }
 
-.index-main .main-panel .welcome-text, .index-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .user-section .user-panel .user-info .information, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info, .user-main .message-section .message-panel .message-info .information, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card {
+.index-main .main-panel .welcome-text, .sequence-main .sequence-panel, .sequence-main .sequence-panel .sequence-text, .sequence-main .sequence-panel .cards .card, .register-main .main-panel .welcome-text, .register-main .main-panel .register-success, .user-main .user-section .section-title, .user-main .user-section .section-title .title, .user-main .user-section .user-panel, .user-main .user-section .user-panel .user-info, .user-main .message-section .section-title, .user-main .message-section .message-panel, .user-main .message-section .message-panel .message-info {
   align-items: center;
   align-content: center; }
 
 header nav .nav .nav-item .nav-link:hover {
   color: gold;
   transition: all .3s; }
+
+@keyframes change-color {
+  from {
+    background-color: red; }
+  to {
+    background-color: yellow; } }
+
+@keyframes rotateY {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(360deg); } }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 header {
   /* background-color: nth($colors, 1); */
@@ -42,7 +60,7 @@ header {
     color: whitesmoke; }
 
 .index-main {
-  background-color: whitesmoke; }
+  background-color: #a09dd0; }
   .index-main .main-panel {
     display: flex;
     flex-direction: column;
@@ -51,21 +69,72 @@ header {
     padding-top: 20px;
     padding-bottom: 20px; }
     .index-main .main-panel .welcome-text {
-      margin: 20px; }
+      margin: 15px; }
+      .index-main .main-panel .welcome-text .text1 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
       .index-main .main-panel .welcome-text .text2 {
-        margin-top: 30px; }
-    .index-main .main-panel .user-info {
-      width: 400px;
-      margin-left: 20px;
-      margin-right: 20px;
-      margin-bottom: 20px; }
-    .index-main .main-panel .register {
-      margin: 20px; }
-    .index-main .main-panel .register-success h4 {
-      text-align: center; }
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 12px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+  .index-main .news-panel .carousel {
+    margin-bottom: 30px; }
+    .index-main .news-panel .carousel .carousel-inner .carousel-item {
+      height: 100px;
+      padding-top: 10px;
+      padding-left: 25px;
+      padding-right: 25px;
+      background: #20274f;
+      background: linear-gradient(90deg, #20274f 5%, #204f43 30%, #20274f 65%); }
+      .index-main .news-panel .carousel .carousel-inner .carousel-item .title {
+        text-align: center;
+        font-size: 1rem;
+        color: azure; }
+      .index-main .news-panel .carousel .carousel-inner .carousel-item .text {
+        font-size: 0.7rem;
+        color: blanchedalmond;
+        text-align: center; }
+  .index-main .weather-panel {
+    height: 170px; }
+    .index-main .weather-panel .weather {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+      align-items: center; }
+      .index-main .weather-panel .weather .loading {
+        height: 75px;
+        width: 75px;
+        animation-name: rotate;
+        animation-duration: 1.5s; }
+      .index-main .weather-panel .weather .invisible {
+        display: none; }
+      .index-main .weather-panel .weather .forecast {
+        background: rgba(46, 32, 79, 0.501);
+        background: linear-gradient(90deg, #20214f 5%, #08427d 30%, #204f43 65%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        margin-top: 20px; }
+        .index-main .weather-panel .weather .forecast .title {
+          text-align: center;
+          font-size: 1.2rem;
+          color: azure; }
+        .index-main .weather-panel .weather .forecast .weather-icon {
+          height: 50px;
+          width: 50px; }
+        .index-main .weather-panel .weather .forecast .text {
+          text-align: center;
+          font-size: 0.9rem;
+          color: #7bd6d6; }
 
 .encode-main {
-  background-color: whitesmoke; }
+  background-color: #a09dd0; }
   .encode-main .encode-panel {
     display: flex;
     flex-direction: column;
@@ -73,27 +142,160 @@ header {
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px; }
-    .encode-main .encode-panel .dropdown {
-      padding: 30px; }
-      .encode-main .encode-panel .dropdown .method-label {
-        margin-right: 10px; }
-      .encode-main .encode-panel .dropdown .method-select {
-        border-radius: 3px; }
-    .encode-main .encode-panel .input-group {
-      margin-left: 40px;
-      margin-right: 40px; }
-      .encode-main .encode-panel .input-group .input-group-prepend {
-        margin-left: 50px;
-        width: 120px; }
-        .encode-main .encode-panel .input-group .input-group-prepend .input-group-text {
-          width: 120px; }
-      .encode-main .encode-panel .input-group .form-control {
-        margin-right: 50px; }
-    .encode-main .encode-panel .code-button {
-      margin: 20px; }
+    .encode-main .encode-panel .encode-text p {
+      text-align: center;
+      font-size: 1rem;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .encode-main .encode-panel .encoding-panel {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .encode-main .encode-panel .encoding-panel .input-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 15px; }
+        .encode-main .encode-panel .encoding-panel .input-group .textarea {
+          resize: none;
+          width: 300px;
+          height: 250px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      .encode-main .encode-panel .encoding-panel .medium-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .dropdown {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px; }
+          .encode-main .encode-panel .encoding-panel .medium-panel .dropdown .method-label {
+            margin-right: 10px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          .encode-main .encode-panel .encoding-panel .medium-panel .dropdown .method-select {
+            border-radius: 3px; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .encode-button {
+          margin: 20px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          background-color: #317512;
+          border: none;
+          box-shadow: 0 5px 5px grey; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .decode-button {
+          margin: 20px;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          background-color: #a90e0e;
+          border: none;
+          box-shadow: 0 5px 5px grey; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .padlock {
+          height: 75px;
+          width: 60px; }
+        .encode-main .encode-panel .encoding-panel .medium-panel .rotation {
+          animation-name: rotateY;
+          animation-duration: 1.5s; }
+
+.sequence-main {
+  background-color: #a09dd0; }
+  .sequence-main .sequence-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .sequence-main .sequence-panel .sequence-text {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .sequence-main .sequence-panel .cards .card {
+      width: 120vh;
+      padding: 10px;
+      margin-top: 10px;
+      padding: 10px; }
+      .sequence-main .sequence-panel .cards .card .input-group {
+        padding: 10px; }
+      .sequence-main .sequence-panel .cards .card .dropdowns {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; }
+        .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
+          padding: 10px; }
+          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .operation-label {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+          .sequence-main .sequence-panel .cards .card .dropdowns .dropdown .method-label {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .sequence-main .sequence-panel .buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .sequence-main .sequence-panel .buttons .sequence-button-add {
+        margin: 15px;
+        background-color: blueviolet;
+        border: none;
+        box-shadow: 0 5px 5px grey; }
+      .sequence-main .sequence-panel .buttons .sequence-button-execute {
+        margin: 15px;
+        background-color: #4444ae;
+        border: none;
+        box-shadow: 0 5px 5px grey; }
+
+.register-main {
+  background-color: #a09dd0; }
+  .register-main .main-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+    .register-main .main-panel .welcome-text {
+      margin: 15px; }
+      .register-main .main-panel .welcome-text .text1 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+      .register-main .main-panel .welcome-text .text2 {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 12px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+    .register-main .main-panel .user-info {
+      width: 400px;
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 20px; }
+    .register-main .main-panel .register {
+      margin: 20px;
+      background-color: blueviolet;
+      border: none;
+      box-shadow: 0 5px 5px grey; }
+    .register-main .main-panel .register-success h4 {
+      font-size: 0.9rem;
+      text-align: center;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
+  .register-main .news-panel .carousel .carousel-inner .carousel-item .card {
+    height: 100px;
+    /* background: rgb(22,45,4);
+                        background: linear-gradient(90deg, rgba(22,45,4,1) 31%, rgba(104,8,125,1) 92%, rgba(46,32,79,1) 97%); */
+    background: #2e204f;
+    background: linear-gradient(90deg, #2e204f 5%, #68087d 30%, #2e204f 65%); }
+    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-title {
+      text-align: center;
+      font-size: 1rem;
+      color: azure; }
+    .register-main .news-panel .carousel .carousel-inner .carousel-item .card .card-body .card-text {
+      font-size: 0.7rem;
+      color: blanchedalmond;
+      text-align: center;
+      /* text-align: justify; */ }
 
 .user-main {
-  background-color: whitesmoke; }
+  background-color: #a09dd0; }
   .user-main .user-section {
     display: flex;
     flex-direction: column;
@@ -102,43 +304,68 @@ header {
     padding-top: 20px;
     padding-bottom: 20px; }
     .user-main .user-section .section-title {
-      margin: 20px; }
+      margin: 10px; }
+      .user-main .user-section .section-title .title {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .user-main .user-section .user-panel {
-      /* box-shadow: 0px 10px 15px black; */ }
+      background-color: whitesmoke;
+      padding: 15px;
+      padding-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 5px grey; }
       .user-main .user-section .user-panel .user-info {
-        margin: 20px; }
+        margin: 10px; }
         .user-main .user-section .user-panel .user-info .user-bio {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          font-size: 0.7rem;
-          color: black; }
+          font-size: 0.7rem; }
           .user-main .user-section .user-panel .user-info .user-bio .user-names {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center; }
             .user-main .user-section .user-panel .user-info .user-bio .user-names h4 {
-              margin-left: 30px;
-              margin-right: 30px;
-              font-family: monospace;
-              font-weight: 500; }
-          .user-main .user-section .user-panel .user-info .user-bio .date {
-            margin-top: 30px; }
+              font-size: 1rem;
+              margin-left: 15px;
+              margin-right: 15px;
+              font-weight: 500;
+              font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+              color: black; }
+          .user-main .user-section .user-panel .user-info .user-bio .user-data {
+            font-size: 1rem;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: black; }
+          .user-main .user-section .user-panel .user-info .user-bio .user-icon {
+            height: 50px;
+            width: 50px; }
         .user-main .user-section .user-panel .user-info .information {
-          margin: 20px; }
+          font-size: 1rem;
+          margin-left: 15px;
+          margin-right: 15px;
+          font-weight: 500;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+          color: black; }
   .user-main .message-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-top: 10px;
+    padding-bottom: 10px; }
     .user-main .message-section .section-title {
-      margin: 20px; }
+      margin: 10px; }
+      .user-main .message-section .section-title .title {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
     .user-main .message-section .message-panel .message-info {
-      margin: 20px; }
+      margin: 10px; }
       .user-main .message-section .message-panel .message-info .all-messages {
         display: flex;
         flex-direction: row;
@@ -153,9 +380,11 @@ header {
           justify-content: center;
           align-items: start;
           margin-right: 20px;
-          width: 45vw; }
+          width: 40vw;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages h4 {
-            align-self: center; }
+            align-self: center;
+            font-size: 0.9rem; }
           .user-main .message-section .message-panel .message-info .all-messages .encoded-messages .card {
             width: 100%;
             margin-bottom: 5px; }
@@ -168,9 +397,11 @@ header {
           justify-content: center;
           align-items: start;
           margin-left: 20px;
-          width: 45vw; }
+          width: 40vw;
+          font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages h4 {
-            align-self: center; }
+            align-self: center;
+            font-size: 0.9rem; }
           .user-main .message-section .message-panel .message-info .all-messages .decoded-messages .card {
             width: 100%;
             margin-bottom: 5px; }
@@ -178,34 +409,42 @@ header {
               width: 100%;
               overflow-wrap: break-word; }
       .user-main .message-section .message-panel .message-info .information {
-        margin: 20px; }
+        font-size: 1rem;
+        margin-left: 15px;
+        margin-right: 15px;
+        font-weight: 500;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: black; }
 
-.sequence-main .sequence-panel {
+footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .sequence-main .sequence-panel .sequence-text {
-    margin-top: 15px;
-    margin-bottom: 15px; }
-  .sequence-main .sequence-panel .cards .card {
-    width: 120vh;
-    padding: 10px;
-    margin-top: 10px;
-    padding: 10px; }
-    .sequence-main .sequence-panel .cards .card .input-group {
-      padding: 10px; }
-    .sequence-main .sequence-panel .cards .card .dropdowns {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center; }
-      .sequence-main .sequence-panel .cards .card .dropdowns .dropdown {
-        padding: 10px; }
-  .sequence-main .sequence-panel .buttons {
+  align-items: center;
+  background-color: black;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 1px;
+  font-size: 0.8rem; }
+  footer .text {
+    width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center; }
-    .sequence-main .sequence-panel .buttons .sequence-button {
-      margin: 15px; }
+    footer .text .footer-text {
+      color: white;
+      font-family: 'Cormorant Unicase', serif;
+      font-size: 0.8rem;
+      font-size: 0.7rem;
+      padding-top: 5px; }
+  footer .logos {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    footer .logos img {
+      width: 25px;
+      height: 25px;
+      margin: 5px; }

@@ -1,38 +1,57 @@
-import { save, get } from './storage.js';
+import { parseDate, chooseWeatherPic } from './functions.js';
 
-function createUser(firstname, lastname) {
-    let user = {
-        firstname: firstname,
-        lastname: lastname,
-        register: new Date().toDateString(),
-        encodedMessages: [],
-        decodedMessages: []
+const fetchNews = async () => {
+    try {
+        let news = document.getElementById("news");
+        const result = await fetch("https://inshorts.deta.dev/news?category=all");
+        const json = await result.json();
+        const data = json.data;
+        data.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "carousel-item";
+            div.innerHTML = `
+                <a href="${item.url}"><h4 class="title">${item.title}</h4></a>
+                <p class="text">${item.content}</p>
+            `;
+            news.append(div); 
+        });
+    } catch(error) {
+        console.log(error);
     }
-    return user
 }
 
-let register = document.getElementById("register");
-
-register.addEventListener("click", () => {
-    let firstname = document.getElementById("firstname");
-    let lastname = document.getElementById("lastname");
-
-    if(get(firstname.value + lastname.value)) {
-        alert(`Sorry ${firstname.value}, you are registered already`);
-        save("user", firstname.value + lastname.value);
+const getWeather = async () => {
+    try {
+        let weather = document.getElementById("weather");
+        const options = {
+            method: 'GET',
+        };
+        let lat = '-34.61315';
+        let lon = '-58.37723';
+        const result = await fetch(`http://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=civillight&output=json`, options);
+        const json = await result.json();
+        const data = json.dataseries;
+        data.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "forecast";
+            let date = item.date;
+            let weatherCode = item.weather;
+            let temperature = item.temp2m;
+            div.innerHTML = `
+                <h4 class="title">${parseDate(date.toString())}</h4>
+                <img class="weather-icon" src=${chooseWeatherPic(weatherCode)} alt="Weather icon">
+                <p class="text">MIN: ${temperature.min}</p>
+                <p class="text">MAX: ${temperature.max}</p>
+            `;
+            let loading = document.getElementById("loading");
+            loading.classList.add("invisible");
+            weather.append(div); 
+        });
+    } catch(error) {
+        console.log(error);
     }
-    else {
-        let newUser = createUser(firstname.value, lastname.value);
-        save(firstname.value + lastname.value, newUser);
-        save("user", firstname.value + lastname.value);
-    
-        let success = document.getElementById("register-success");
-        let message = document.createElement("div");
-        message.innerHTML = `
-        <h4>¡Hello ${firstname.value} ${lastname.value}!</h4>
-        <h4>¡You have been successfully registered!</h4>
-        `
-        success.innerText = "";
-        success.append(message);
-    }
-});
+}
+
+fetchNews();
+getWeather();
+

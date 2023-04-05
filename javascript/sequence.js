@@ -1,6 +1,8 @@
 import { process } from './functions.js';
 import { addUserData, save } from './storage.js';
 
+let sequenceBeat = new Audio('../sounds/padlock.wav');
+let failureBeat = new Audio('../sounds/failed-operation.wav');
 let add = document.getElementById("add");
 
 add.addEventListener("click", () => {
@@ -10,7 +12,7 @@ add.addEventListener("click", () => {
     newCard.innerHTML = `
         <div class="dropdowns">
             <div class="dropdown">
-                <label class="operation-label" for="operation">Operation:</label>
+                <label class="operation-label" for="operation">OPERATION</label>
                 <select id="added-operation" class="operation-select">
                     <option value="none">None</option>
                     <option value="encode">Encode</option>
@@ -19,7 +21,7 @@ add.addEventListener("click", () => {
             </div>
 
             <div class="dropdown">
-                <label class="method-label" for="method">Method:</label>
+                <label class="method-label" for="method">METHOD</label>
                 <select id="added-method" class="method-select">
                     <option value="none">None</option>
                     <option value="vocals">Vocals</option>
@@ -46,9 +48,13 @@ execute.addEventListener("click", () => {
     let sequence = [];
     sequence.push(first);
     if(message === "") {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = `Information missing: please enter a message`
-        $('#errorModal').modal('show');
+        failureBeat.play();
+        Swal.fire({
+            title: `Operation failed`, 
+            text: `Information missing: please enter a message`, 
+            icon: "warning",
+            confirmButtonText: "OK",
+        });
     }
     let addedCards = document.getElementsByClassName("added-card");
     for (let i = 0; i < addedCards.length; i++) {
@@ -64,9 +70,13 @@ execute.addEventListener("click", () => {
         emptyStep = emptyStep || (step.operation === "none") || (step.method === "none");
     });
     if (emptyStep) {
-        let modal = document.getElementById("modal-body");
-        modal.innerHTML = `Information missing: please choose operation and method`
-        $('#errorModal').modal('show');
+        failureBeat.play();
+        Swal.fire({
+            title: `Operation failed`, 
+            text: `Information missing: please choose operation and method`, 
+            icon: "warning",
+            confirmButtonText: "OK",
+        });
     }
     else {
         try {
@@ -77,16 +87,25 @@ execute.addEventListener("click", () => {
                 addUserData(step.operation, step.method, messageToProcess, processedMessage);
                 messageToProcess = processedMessage;
             })
-            let response = document.getElementById("sequence-response");
-            let responseText = document.createElement("div");
-            responseText.className = "";
-            responseText.innerHTML = `<p>¡The sequence was successfully processed!</p>`;
-            response.append(responseText);
+            sequenceBeat.play();
+            setTimeout(() => {
+                sequenceBeat.play();
+            }, 500);
+            Swal.fire({
+            title: `Sequence completed!`, 
+            text: `All operations were performed with no issues`, 
+            icon: "success",
+            confirmButtonText: "OK",
+            });
         }
         catch(error) {
-            let modal = document.getElementById("modal-body");
-            modal.innerHTML = error;
-            $('#errorModal').modal('show');
+            failureBeat.play();
+            Swal.fire({
+                title: `Operation failed`, 
+                text: `${error}`, 
+                icon: "warning",
+                confirmButtonText: "OK",
+            });
         }
     }
 });

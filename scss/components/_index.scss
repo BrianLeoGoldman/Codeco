@@ -1,35 +1,90 @@
 .index-main {
-    background-color: nth($colors, 1);
+    background-color: nth($colors, 5);
     .main-panel {
         @include flex(flex, column, center, center);
         padding-top: 20px;
         padding-bottom: 20px;
         .welcome-text {
-            margin: 20px;
+            margin: 15px;
             @extend %centered;
             .text1 {
                 @extend %title;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
             .text2 {
-                @extend %title;
-                margin-top: 30px;
+                text-align: center;
+                font-size: 1.1rem;
+                margin-top: 12px;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             }
         }
-        .user-info {
-            width: 400px;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-bottom: 20px;
+    }
+    .news-panel {
+        .carousel {
+            margin-bottom: 30px;
+            .carousel-inner {
+                .carousel-item {
+                    height: 100px;
+                    padding-top: 10px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    background: rgb(32,39,79);
+                    background: linear-gradient(90deg, rgba(32,39,79,1) 5%, rgba(32,79,67,1) 30%, rgba(32,39,79,1) 65%);
+                    .title {
+                        text-align: center;
+                        font-size: 1rem;
+                        color: azure;
+                    }
+                    .text {
+                        font-size: 0.7rem;
+                        color: blanchedalmond;
+                        text-align: center;
+                    }
+                }
+            }
         }
-        .register {
-            margin: 20px;
-        }
-        .register-success {
-            @extend %centered;
-            h4 {
-                text-align: center;
+    }
+    .weather-panel {
+        height: 170px;
+        .weather {
+            @include flex(flex, row, center, center);
+            height: 120px;
+            align-items: center;
+            .loading {
+                height: 75px;
+                width: 75px;
+                animation-name: rotate;
+                animation-duration: 1.5s;
+            }
+            .invisible {
+                display: none;
+            }
+            .forecast {
+                background: rgba(46, 32, 79, 0.501);
+                background: linear-gradient(90deg, rgb(32, 33, 79) 5%, rgb(8, 66, 125) 30%, rgb(32, 79, 67) 65%);
+                @include flex(flex, column, center, center);
+                @extend %border;
+                border-radius: 5px;
+                padding: 5px;
+                margin: 5px;
+                margin-top: 20px;
+                .title {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: azure;
+                }
+                .weather-icon {
+                    height: 50px;
+                    width: 50px;
+                }
+                .text {
+                    text-align: center;
+                    font-size: 0.9rem;
+                    color: rgb(123, 214, 214);
+                }
             }
         }
     }
 }
+
 
