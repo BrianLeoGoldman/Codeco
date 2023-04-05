@@ -76,6 +76,10 @@
                 .weather-icon {
                     height: 50px;
                     width: 50px;
+                    &:hover {
+                        animation-name: rotate;
+                        animation-duration: 1.5s;
+                    }
                 }
                 .text {
                     text-align: center;
